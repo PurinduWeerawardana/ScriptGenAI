@@ -84,10 +84,10 @@ export default function Example() {
       </div>
       <MobileNav open={openNav}>
         <div className="container mx-auto">
-          <Button variant="outlined" size="sm" fullWidth className="mb-2">
+          <Button variant="outlined" size="sm" fullWidth className="mb-2" color="deep-purple">
             <span>Log In</span>
           </Button>
-          <Button variant="gradient" size="sm" fullWidth className="mb-2">
+          <Button variant="gradient" size="sm" fullWidth className="mb-2" color="deep-purple">
             <span>Sign up</span>
           </Button>
         </div>
