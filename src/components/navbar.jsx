@@ -7,7 +7,7 @@ import {
 } from "@material-tailwind/react";
 import logo from "../static/images/logo.png";
 
-export default function Example() {
+export default function NavBar() {
   const [openNav, setOpenNav] = useState(false);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Example() {
             variant="outlined"
             color="deep-purple"
             size="md"
-            className="hidden lg:inline-block px-8 m-2"
+            className="hidden lg:inline-block px-8 m-2 rounded-full"
           >
             <span>Log in</span>
           </Button>
@@ -34,12 +34,10 @@ export default function Example() {
             variant="gradient"
             color="deep-purple"
             size="md"
-            className="hidden lg:inline-block px-8 m-2"
-            onClick={
-              () => {
-                window.location.href = "https://scripgenai.com";
-              }
-            }
+            className="hidden lg:inline-block px-8 m-2 rounded-full"
+            onClick={() => {
+              window.location.href = "#";
+            }}
           >
             <span>Sign up</span>
           </Button>
@@ -84,10 +82,22 @@ export default function Example() {
       </div>
       <MobileNav open={openNav}>
         <div className="container mx-auto">
-          <Button variant="outlined" size="sm" fullWidth className="mb-2" color="deep-purple">
+          <Button
+            variant="outlined"
+            size="sm"
+            fullWidth
+            className="mb-2"
+            color="deep-purple"
+          >
             <span>Log In</span>
           </Button>
-          <Button variant="gradient" size="sm" fullWidth className="mb-2" color="deep-purple">
+          <Button
+            variant="gradient"
+            size="sm"
+            fullWidth
+            className="mb-2"
+            color="deep-purple"
+          >
             <span>Sign up</span>
           </Button>
         </div>
