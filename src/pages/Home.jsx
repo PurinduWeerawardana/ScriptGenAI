@@ -11,11 +11,11 @@ export default function Home() {
       <div className="blob">
         <img src={blob} alt="" />
       </div>
-      <div className="header grid gap-0 grid-rows-50 w-2/3 my-10 m-auto	">
-        <h1 className="text-center text-xl text-deep-purple-600 uppercase font-sans font-bold">
+      <div className="header grid gap-0 grid-rows-50 w-5/6 sm:w-2/3 my-10 m-auto	">
+        <h1 className="text-center text-base sm:text-xl text-deep-purple-600 uppercase font-sans font-bold">
           Get prepared for presentations easily
         </h1>
-        <h1 className="text-center text-6xl text-indigo-900 font-sans font-semibold">
+        <h1 className="text-center text-4xl sm:text-6xl text-indigo-900 font-sans font-semibold">
           We make informative script for your presentation slide deck
         </h1>
         <h1 className="text-center m-2 text-lg text-indigo-900">
@@ -42,7 +42,7 @@ export default function Home() {
           </Button>
         </div>
       </div>
-      <div className="illustration m-auto w-1/2">
+      <div className="illustration m-auto w-3/4 sm:w-1/2">
         <img src={illustration} alt="" />
       </div>
     </div>
