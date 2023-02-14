@@ -4,9 +4,9 @@ import {
   Button
 } from "@material-tailwind/react";
 import uploadIcon from "../static/images/upload-icon.png";
-import { initializeApp, storage } from "firebase/app";
+import { initializeApp} from "firebase/app";
+import { getStorage } from "firebase/storage";
 
-import "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAtMg9AKj4zJ8kOgC5IfvPAmGj-H3COEnc",
@@ -40,7 +40,7 @@ class UploadCard extends React.Component {
 
   handleUpload = () => {
     const { file } = this.state;
-    const storageRef = storage().ref();
+    const storageRef = getStorage().ref();
     const fileRef = storageRef.child(`pptx/${file.name}`);
     const task = fileRef.put(file);
 
