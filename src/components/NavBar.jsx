@@ -22,7 +22,10 @@ export default function NavBar() {
   return (
     <Navbar className="mx-auto max-w-full">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <img src={logo} alt="ScripGenAI" className="w-1/2 sm:w-auto"/>
+        <img src={logo} alt="ScripGenAI" className="w-1/2 sm:w-auto" onClick={() => {
+              navigate("/")
+              
+              }} />
         <div className="">
           <Button
             variant="outlined"
