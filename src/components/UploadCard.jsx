@@ -1,115 +1,93 @@
-import React from "react";
+import { useState } from "react";
 import {
   Card,
-  Button
+  Button,Progress
 } from "@material-tailwind/react";
 import uploadIcon from "../static/images/upload-icon.png";
-import { initializeApp} from "firebase/app";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 
+const app = initializeApp({
+  apiKey: "AIzaSyAs3dSZySiNa5yCY2MSqvmCVKexMTSxQ3E",
+  authDomain: "sdgp-squadr.firebaseapp.com",
+  projectId: "sdgp-squadr",
+  storageBucket: "sdgp-squadr.appspot.com",
+  messagingSenderId: "411601539731",
+  appId: "1:411601539731:web:8f9e7ca228e25575663366",
+  measurementId: "G-N48LSP4X4J"
+});
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAtMg9AKj4zJ8kOgC5IfvPAmGj-H3COEnc",
-  authDomain: "scriptgenai-fileupload.firebaseapp.com",
-  projectId: "scriptgenai-fileupload",
-  storageBucket: "scriptgenai-fileupload.appspot.com",
-  messagingSenderId: "436136312576",
-  appId: "1:436136312576:web:cfd9a8cf23913be5bc3de5",
-  measurementId: "G-JF996FE3GB"
-};
+const storage = getStorage(app);
 
-// Initialize Firebase
-initializeApp(firebaseConfig);
+function App() {
+  // State to store uploaded file
+  const [file, setFile] = useState("");
 
-class UploadCard extends React.Component {
-  state = {
-    file: null,
-    errors: [],
-    uploadState: null,
-    progress: 0
-  };
+  // progress
+  const [percent, setPercent] = useState(0);
 
-  fileInputRef = React.createRef();
+  // Handle file upload event and update state
+  function handleChange(event) {
+    setFile(event.target.files[0]);
+  }
 
-  addFile = event => {
-    const file = event.target.files[0];
-    if (file) {
-      this.setState({ file });
+  const handleUpload = () => {
+    if (!file) {
+      alert("Please upload an image first!");
     }
-  };
 
-  handleUpload = () => {
-    const { file } = this.state;
-    const storageRef = getStorage().ref();
-    const fileRef = storageRef.child(`pptx/${file.name}`);
-    const task = fileRef.put(file);
+    const storageRef = ref(storage, `/files/${file.name}`);
 
-    task.on(
+    // progress can be paused and resumed. It also exposes progress updates.
+    // Receives the storage reference and the file to upload.
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on(
       "state_changed",
-      snapshot => {
-        let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        this.setState({ progress });
+      (snapshot) => {
+        const percent = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+
+        // update progress
+        setPercent(percent);
       },
-      error => {
-        this.setState({ errors: this.state.errors.concat(error) });
-      },
+      (err) => console.log(err),
       () => {
-        task.snapshot.ref.getDownloadURL().then(downloadURL => {
-          this.setState({ uploadState: "success", downloadURL });
+        // download url
+        getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+          console.log(url);
         });
       }
     );
   };
 
-  openFilePicker = () => {
-    this.fileInputRef.current.click();
-  };
-
-  render() {
-    return (
+  return (
+    <div>
       <Card className="w-9/12 h-96 m-auto">
         <Card className="bg-lightPurple m-6 h-full">
           <img src={uploadIcon} alt="" className="w-24 m-auto" />
-          {this.state.file && (
-            <div>
-              <p>{this.state.file.name}</p>
-              <progress value={this.state.progress} max="200" />
-            </div>
-          )}
-          {this.state.uploadState === "success" && (
-            <p>File uploaded successfully!</p>
-          )}
-          {this.state.errors.length > 0 && (
-            <p>Errors: {this.state.errors.join(", ")}</p>
-          )}
+          <input type="file" size="md" className="mb-4 mx-10 rounded-full" onChange={handleChange} accept="/image/*" />
 
-           {/* Render the upload progress if the state is set */}
-          {this.state.uploadState === "uploading" && (
-            <p>Upload Progress: {this.state.uploadProgress}%</p>
-          )
-          }
-
-            {/* Render a success message if the upload is complete */}
-          {this.state.uploadState === "complete" && (
-            <p>Upload Complete!</p>
-          )
-          }
-
+          <p >{percent} % done</p>
+          
+          <Progress value={50} percent={50} color="purple" variant="filled" />
+        
           <Button
+            onClick={handleUpload}
             variant="gradient"
             color="deep-purple"
             size="md"
             className="mb-6 mx-10 rounded-full"
-            onClick={() => this.uploadFile()}
           >
-            <input type="file" onChange={this.addFile} />
             <span>Upload</span>
           </Button>
+
         </Card>
       </Card>
-    );
-  }
+    </div>
+  );
 }
 
-export default UploadCard;
-
+export default App;
