@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {
   Card,
-  Button,Progress
+  Button,Progress, input
 } from "@material-tailwind/react";
 import uploadIcon from "../static/images/upload-icon.png";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
@@ -34,7 +34,7 @@ function App() {
 
   const handleUpload = () => {
     if (!file) {
-      alert("Please upload an image first!");
+      alert("Please upload the Presentation Slides!");
     }
 
     const storageRef = ref(storage, `/files/${file.name}`);
@@ -67,13 +67,12 @@ function App() {
     <div>
       <Card className="w-9/12 h-96 m-auto">
         <Card className="bg-lightPurple m-6 h-full">
-          <img src={uploadIcon} alt="" className="w-24 m-auto" />
-          <input type="file" size="md" className="mb-4 mx-10 rounded-full" onChange={handleChange} accept="/image/*" />
-
-          <p >{percent} % done</p>
+        <p >{percent} % </p>
           
           <Progress value={percent}  variant="gradient" color="deep-purple"  size="md"  className="w-full h-7 mb-4 bg-gray-200 rounded-full dark:bg-gray-700 shadow-xl "  />
-      
+
+          <img src={uploadIcon} alt="" className="w-24 m-auto" onClick={input}/>
+          <input type="file" size="md" className=" mb-20 mx-8 " onChange={handleChange} accept="/image/*" />
                 
           <Button
             onClick={handleUpload}
