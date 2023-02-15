@@ -3,8 +3,11 @@ import Navbar from "../components/NavBar";
 import { Button } from "@material-tailwind/react";
 import illustration from "../static/images/home-illustration.png";
 import blob from "../static/images/blob.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="home">
       <Navbar></Navbar>
@@ -29,6 +32,8 @@ export default function Home() {
             color="deep-purple"
             size="md"
             className="bg-indigo-900 text-white font-bold py-4 px-6 m-2 rounded-full"
+            onClick={() => navigate("/Login")}
+            
           >
             <span>Get Started</span>
           </Button>
@@ -37,6 +42,7 @@ export default function Home() {
             color="deep-purple"
             size="md"
             className="font-bold py-4 px-6 m-2 rounded-full"
+           
           >
             <span>Learn More</span>
           </Button>
