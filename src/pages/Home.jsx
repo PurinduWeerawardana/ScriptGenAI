@@ -14,7 +14,7 @@ export default function Home() {
       <div className="blob">
         <img src={blob} alt="" />
       </div>
-      <div className="header grid gap-0 grid-rows-50 w-5/6 sm:w-2/3 my-10 m-auto	">
+      <div className="header grid gap-3 grid-rows-60 w-4/6 sm:w-2/3 my-10 m-auto	">
         <h1 className="text-center text-base sm:text-xl text-deep-purple-600 uppercase font-sans font-bold">
           Get prepared for presentations easily
         </h1>
