@@ -72,7 +72,7 @@ function App() {
 
           <p >{percent} % done</p>
           
-          <Progress value={percent}  variant="gradient" color="deep-purple"  />
+          <Progress value={percent}  variant="gradient" color="deep-purple"  size="md"  className="mb-10 mx-1 rounded-full" />
         
           <Button
             onClick={handleUpload}
