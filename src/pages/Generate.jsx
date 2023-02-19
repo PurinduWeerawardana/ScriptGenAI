@@ -10,7 +10,6 @@ export default function Generate() {
   const generateScript = async (e) => {
     e.preventDefault();
     const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
-    console.log(apiKey);
     const prompt =
       "Write a presentation script ->\nH1: Lecture 01 – Outline\nP1: DB, DBMS, DB Applications & DB System\nP1: Conceptual, logical & physical design\nP1: Conceptual design & ER modelling\nP1: Components of an ER Model\n\tSP1: Entities\n\tSP1: Multiplicities\n\tSP1: Relationships\n\tSP1: Attributes\nP1: Diagrammatic techniques, UML notations\nP1: Complex\nrelationships\n";
     const response = await fetch(
@@ -33,7 +32,6 @@ export default function Generate() {
       }
     );
     const json = await response.json();
-    console.log(json);
     setGeneratedScript(json.choices[0].text);
   };
   return (
