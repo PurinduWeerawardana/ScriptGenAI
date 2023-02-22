@@ -2,6 +2,8 @@ import Navbar from "../components/NavBar";
 import { Button, Input } from "@material-tailwind/react";
 import illustration from "../static/images/login-illustration.png";
 import blob from "../static/images/blob.png";
+import {FcGoogle} from 'react-icons/fc'
+import {BsFacebook} from 'react-icons/bs'
 
 export default function Signup() {
   return (
