@@ -5,7 +5,7 @@ import os
 
 
 slide_count, image_count, table_count = 0, 0, 0
-filename = 'test.pptx'
+filename = 'lecture.pptx'
 
 def iter_picture_shapes(prs):
     for slide in prs.slides:
