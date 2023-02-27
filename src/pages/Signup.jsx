@@ -5,6 +5,7 @@ import blob from "../static/images/blob.png";
 import {FcGoogle} from "react-icons/fc"
 import {BsFacebook} from "react-icons/bs"
 import { signInWithGoogle } from "../firebase-config";
+import { signInWithFacebook } from "../firebase-config";
 
 export default function Signup() {
   return (
@@ -39,7 +40,7 @@ export default function Signup() {
                   </div>
 
                   <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
-                    <BsFacebook size={30} color={'blue'}/>
+                    <BsFacebook onClick ={signInWithFacebook} size={30} color={'blue'}/>
                   </div>
                 {/* <Button
                   color="white"
