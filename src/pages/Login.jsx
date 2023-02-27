@@ -5,6 +5,7 @@ import blob from "../static/images/blob.png";
 import {FcGoogle} from 'react-icons/fc'
 import {BsFacebook} from 'react-icons/bs'
 import {signInWithGoogle} from "../firebase-config";
+import { signInWithFacebook } from "../firebase-config";
 
 export default function Login() {
   return (
@@ -70,7 +71,7 @@ export default function Login() {
                     />
                   </svg> */}
                   <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
-                    <FcGoogle OnClick = {signInWithGoogle} size={30}/>
+                    <FcGoogle onClick = {signInWithGoogle} size={30}/>
                   </div>
                 {/* </Button> */}
                 
@@ -99,7 +100,7 @@ export default function Login() {
 {/* imported from react icons you reuse this */}
 
                 <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
-                    <BsFacebook size={30} color={'blue'}/>
+                    <BsFacebook onClick = {signInWithFacebook}size={30} color={'blue'}/>
                   </div>
               </div>
             </div>
