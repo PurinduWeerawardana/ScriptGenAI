@@ -89,7 +89,7 @@ function App() {
             variant="gradient"
             color="deep-purple"
             size="md"
-            className="w-full h-7 mb-4 bg-gray-200 rounded-full dark:bg-gray-700 shadow-xl "
+            className="w-full h-9 mb-4 bg-gray-200 rounded-full dark:bg-gray-700 shadow-xl "
           />
 
           <img src={uploadIcon} alt="" className="w-24 m-auto" onClick={input} />
@@ -115,7 +115,7 @@ function App() {
                   cursor: "pointer",
                 }}
               />
-</div>
+          </div>
 
           <Button
             onClick={handleUpload}
