@@ -1,10 +1,16 @@
 import { useState } from "react";
 import {
   Card,
-  Button,Progress, input
+  Button,
+  Progress,
+  input
 } from "@material-tailwind/react";
 import uploadIcon from "../static/images/upload-icon.png";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import {
+  ref,
+  uploadBytesResumable,
+  getDownloadURL
+} from "firebase/storage";
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 
@@ -29,7 +35,13 @@ function App() {
 
   // Handle file upload event and update state
   function handleChange(event) {
-    setFile(event.target.files[0]);
+    const selectedFile = event.target.files[0];
+    if (selectedFile.type !== "application/vnd.openxmlformats-officedocument.presentationml.presentation") {
+      alert("Please select a .pptx file!");
+      setFile("");
+    } else {
+      setFile(selectedFile);
+    }
   }
 
   const handleUpload = () => {
@@ -65,15 +77,46 @@ function App() {
 
   return (
     <div>
-      <Card className="w-9/12 h-96 m-auto">
-        <Card className="bg-lightPurple m-6 h-full">
-        <p >{percent} % </p>
-          
-          <Progress value={percent}  variant="gradient" color="deep-purple"  size="md"  className="w-full h-7 mb-4 bg-gray-200 rounded-full dark:bg-gray-700 shadow-xl "  />
+      
 
-          <img src={uploadIcon} alt="" className="w-24 m-auto" onClick={input}/>
-          <input type="file" size="md" className=" mb-20 mx-8 " onChange={handleChange} accept="/image/*" />
+      <Card className="w-9/12 h-96 m-auto">
+        
+        <Card className="bg-lightPurple m-6 h-full">
+          <p>{percent} % </p>
+
+          <Progress
+            value={percent}
+            variant="gradient"
+            color="deep-purple"
+            size="md"
+            className="w-full h-7 mb-4 bg-gray-200 rounded-full dark:bg-gray-700 shadow-xl "
+          />
+
+          <img src={uploadIcon} alt="" className="w-24 m-auto" onClick={input} />
+          <div className="text-center">
+          <label htmlFor="pptx-file" className="block text-gray-700 font-bold mb-2">
+            Please select a PPTX file:
+          </label>
+        
+              <input
+                type="file"
+                id="pptx-file"
+                className="mb-8 mx-8"
+                onChange={handleChange}
+                accept=".pptx"
+                style={{
+                  backgroundColor: "#F3F4F6",
+                  color: "#6B7280",
                 
+                  padding: "15px 70px",
+                  boxShadow: "none",
+                  border: "none",
+                  outline: "none",
+                  cursor: "pointer",
+                }}
+              />
+</div>
+
           <Button
             onClick={handleUpload}
             variant="gradient"
@@ -81,11 +124,13 @@ function App() {
             size="md"
             className="mb-6 mx-10 rounded-full"
           >
+            
             <span>Upload</span>
           </Button>
-
+          
         </Card>
       </Card>
+      
     </div>
   );
 }
