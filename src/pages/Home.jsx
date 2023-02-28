@@ -42,7 +42,7 @@ export default function Home() {
             color="deep-purple"
             size="md"
             className="font-bold py-4 px-6 m-2 rounded-full"
-           
+            onClick={() => navigate("/about")}
           >
             <span>Learn More</span>
           </Button>
