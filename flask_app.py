@@ -2,9 +2,11 @@ from flask import Flask
 import re
 import openai
 import urllib
+from urllib import request
 
 # set API key
 openai.api_key = "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"
+
 
 def generateScripts(slides):
     print("Completing...")
@@ -27,12 +29,14 @@ def generateScripts(slides):
         generatedScripts.append(completion.choices[0].text)
     return generatedScripts
 
+
 app = Flask(__name__)
 
 
 @app.route('/')
 def hello_world():
     return 'Welcome to ScriptGenAI!'
+
 
 @app.route('/generate/<string:fileName>/<string:accessToken>', methods=['GET'])
 def generateAll(fileName, accessToken):
@@ -44,6 +48,14 @@ def generateAll(fileName, accessToken):
     slides = list(filter(None, slides))
     generatedScripts = generateScripts(slides)
     return ',\n'.join(generatedScripts)
+
+
+@app.route('/check')
+def check():
+    URL = "https://firebasestorage.googleapis.com/v0/b/sdgp-squadr.appspot.com/o/files%2F22_5COSC020W_LECT02_EERD.pptx?alt=media&token=eacdf924-d25b-42ad-aefe-f281a76234c2"
+    response = request.urlretrieve(URL, "presentation.pptx")
+    return "Noice!"
+
 
 if __name__ == "__flask_app__":
     app.run(debug=True)
