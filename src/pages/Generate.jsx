@@ -2,15 +2,42 @@ import Navbar from "../components/NavBar";
 import blob from "../static/images/blob.png";
 import preview from "../static/images/preview.jpg";
 import { Button } from "@material-tailwind/react";
+import TextLoader from "../components/TextLoader";
 import { useState } from "react";
 
 export default function Generate() {
   const [generatedScript, setGeneratedScript] = useState("");
 
-  
-  const generateScript = (e) => {
-    setGeneratedScript("This is a generated script");
-  }
+  const generateScript = async (e) => {
+    e.preventDefault();
+    setGeneratedScript(
+      <TextLoader lines={10} width={"100%"} height="10" lineHeight="h-2" />
+    );
+    const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
+    const prompt =
+      "Write a presentation script ->\nH1: Lecture 01 – Outline\nP1: DB, DBMS, DB Applications & DB System\nP1: Conceptual, logical & physical design\nP1: Conceptual design & ER modelling\nP1: Components of an ER Model\n\tSP1: Entities\n\tSP1: Multiplicities\n\tSP1: Relationships\n\tSP1: Attributes\nP1: Diagrammatic techniques, UML notations\nP1: Complex\nrelationships\n";
+    const response = await fetch(
+      `https://api.openai.com/v1/engines/text-davinci-003/completions`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          prompt: prompt,
+          temperature: 0.7,
+          top_p: 1,
+          frequency_penalty: 0,
+          presence_penalty: 0,
+          max_tokens: 200,
+          n: 1,
+        }),
+      }
+    );
+    const json = await response.json();
+    setGeneratedScript(json.choices[0].text);
+  };
   return (
     <div className="generate">
       <Navbar></Navbar>
