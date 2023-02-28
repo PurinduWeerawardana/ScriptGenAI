@@ -1,6 +1,7 @@
 from flask import Flask
 import re
 import openai
+import urllib
 
 # set API key
 openai.api_key = "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"
@@ -33,6 +34,16 @@ app = Flask(__name__)
 def hello_world():
     return 'Welcome to ScriptGenAI!'
 
+@app.route('/generate/<string:fileName>/<string:accessToken>', methods=['GET'])
+def generateAll(fileName, accessToken):
+    in_file = urllib.request.urlopen(
+        "https://firebasestorage.googleapis.com/v0/b/sdgp-squadr.appspot.com/o/files%2F" + fileName + "?alt=media&token=" + accessToken)
+    content = in_file.read().decode()
+    # split into slides
+    slides = content.split('<[[[start]]]>')
+    slides = list(filter(None, slides))
+    generatedScripts = generateScripts(slides)
+    return ',\n'.join(generatedScripts)
 
 if __name__ == "__flask_app__":
     app.run(debug=True)
