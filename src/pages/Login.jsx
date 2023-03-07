@@ -2,8 +2,10 @@ import Navbar from "../components/NavBar";
 import { Button, Input, Checkbox } from "@material-tailwind/react";
 import illustration from "../static/images/login-illustration.png";
 import blob from "../static/images/blob.png";
-import { FcGoogle } from "react-icons/fc";
-import { BsFacebook } from "react-icons/bs";
+import {FcGoogle} from 'react-icons/fc'
+import {BsFacebook} from 'react-icons/bs'
+import { signInWithGoogle } from "../firebase-config";
+import { signInWithFacebook } from "../firebase-config";
 
 export default function Login() {
   return (
@@ -39,26 +41,33 @@ export default function Login() {
                 label="Remember Me"
                 ripple={true}
               />
+              <div className="absolute right-0 flex flex-row-10 justify-between">
+                <p className="text-sm text-textPurple">Forgot Password?</p>
+              </div>
             </div>
             <Button color="deep-purple" size="lg" block>
               Log in
             </Button>
             <div id="social-login">
-              <p className="text-center text-sm">Or log in with</p>
+              <p className="text-center text-sm">Need an account?</p>
+              <p className="text-right text-textPurple">Sign up</p>
+
               <div className="flex flex-row-3 justify-around">
+                
+                  
+                  <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
+                    <FcGoogle onClick = {signInWithGoogle}size={30}/>
+                  </div>
+                
+
+{/* imported from react icons you reuse this */}
+
                 <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
-                  <FcGoogle size={30} />
-                </div>
-                <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
-                  <BsFacebook size={30} color={"blue"} />
-                </div>
+                    <BsFacebook onClick = {signInWithFacebook} size={30} color={'blue'}/>
+                  </div>
               </div>
             </div>
-            <div className="flex flex-row-3 justify-between">
-              <p>Terms</p>
-              <p>Privacy</p>
-              <p>Security</p>
-            </div>
+          
           </div>
         </div>
       </div>
