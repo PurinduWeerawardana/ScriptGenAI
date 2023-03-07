@@ -2,8 +2,8 @@ import Navbar from "../components/NavBar";
 import { Button, Input, Checkbox } from "@material-tailwind/react";
 import illustration from "../static/images/login-illustration.png";
 import blob from "../static/images/blob.png";
-import {FcGoogle} from 'react-icons/fc'
-import {BsFacebook} from 'react-icons/bs'
+import { FcGoogle } from "react-icons/fc";
+import { BsFacebook } from "react-icons/bs";
 import { signInWithGoogle } from "../firebase-config";
 import { signInWithFacebook } from "../firebase-config";
 
@@ -51,23 +51,19 @@ export default function Login() {
             <div id="social-login">
               <p className="text-center text-sm">Need an account?</p>
               <p className="text-right text-textPurple">Sign up</p>
-
               <div className="flex flex-row-3 justify-around">
-                
-                  
-                  <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
-                    <FcGoogle onClick = {signInWithGoogle}size={30}/>
-                  </div>
-                
-
-{/* imported from react icons you reuse this */}
-
                 <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
-                    <BsFacebook onClick = {signInWithFacebook} size={30} color={'blue'}/>
-                  </div>
+                  <FcGoogle onClick={signInWithGoogle} size={30} />
+                </div>
+                <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
+                  <BsFacebook
+                    onClick={signInWithFacebook}
+                    size={30}
+                    color={"blue"}
+                  />
+                </div>
               </div>
             </div>
-          
           </div>
         </div>
       </div>
