@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import {
   Navbar,
   MobileNav,
@@ -10,7 +10,7 @@ import logo from "../static/images/logo.png";
 
 export default function NavBar() {
   const [openNav, setOpenNav] = useState(false);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.addEventListener(
@@ -22,10 +22,14 @@ export default function NavBar() {
   return (
     <Navbar className="mx-auto max-w-full">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <img src={logo} alt="ScripGenAI" className="w-1/2 sm:w-auto" onClick={() => {
-              navigate("/")
-              
-              }} />
+        <img
+          src={logo}
+          alt="ScripGenAI"
+          className="w-1/2 sm:w-auto"
+          onClick={() => {
+            navigate("/");
+          }}
+        />
         <div className="">
           <Button
             variant="outlined"
@@ -33,10 +37,8 @@ export default function NavBar() {
             size="md"
             className="hidden lg:inline-block px-8 m-2 rounded-full"
             onClick={() => {
-              navigate("/Login")
-              
-              }} 
-              
+              navigate("/Login");
+            }}
           >
             <span>Log in</span>
           </Button>
@@ -47,7 +49,7 @@ export default function NavBar() {
             className="hidden lg:inline-block px-8 m-2 rounded-full"
             onClick={() => {
               window.location.href = "#";
-              navigate("/Signup")
+              navigate("/Signup");
             }}
           >
             <span>Sign up</span>
@@ -110,8 +112,6 @@ export default function NavBar() {
             color="deep-purple"
           >
             <span>Sign up</span>
-
-             
           </Button>
         </div>
       </MobileNav>
