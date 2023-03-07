@@ -1,16 +1,43 @@
 import Navbar from "../components/NavBar";
 import blob from "../static/images/blob.png";
-import preview from "../static/images/preview.jpg";
+import PresentationViewer from "../components/PresentationViewer";
 import { Button } from "@material-tailwind/react";
+import TextLoader from "../components/TextLoader";
 import { useState } from "react";
 
 export default function Generate() {
   const [generatedScript, setGeneratedScript] = useState("");
 
-  
-  const generateScript = (e) => {
-    setGeneratedScript("This is a generated script");
-  }
+  const generateScript = async (e) => {
+    e.preventDefault();
+    setGeneratedScript(
+      <TextLoader lines={10} width={"100%"} height="10" lineHeight="h-2" />
+    );
+    const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
+    const prompt =
+      "Act as an undergraduate student. You have to make a script for presentation. Here are the points in the 3 slides. [S1: H1: Lecture 01 Outline\n P1: DB, DBMS, DB Applications & DB System\n P1: Conceptual, logical & physical design\n P1: Conceptual design & ER modelling\n P1: Components of an ER Model\n \tSP1: Entities\n \tSP1: Multiplicities\n \tSP1: Relationships\n \tSP1: Attributes\n P1: Diagrammatic techniques, UML notations\n P1: Complex relationships S2: H1: DB, DBMS, DB Applications & DB System\n P1: Database (DB)\n \tSP1: Shared collection of logically related data (& description)\n \tSP1: enables users to define, create maintain the DBrganization.\n P1: Database Management Systems (DBMS) Software\n \tSP1: enables users to define, create maintain the DB\n \tSP1: provides controlled access to this DB. e.g. Oracle, MS SQL Server, MySQL,SQLite, MongoDB, etc.\n P1: Database Application.\n \tSP1: Computer program that interacts with DB by issuing a request (typically SQL statement) to the DBMS. e.g. online retailing system, booking system, stock management system, electronic medical record, etc.\n P1: DATABASE SYSTEM = DB + DBMS + DB APPLICATIONS S3: H1: Essential concepts of ER modelling/n P1: Entity/n P1: Relationship/n P1: Attribute] Make a informative script to present it to a database lecturer as a undergraduate student for a viva. Make it fluent and proffessional.";
+    const response = await fetch(
+      `https://api.openai.com/v1/engines/text-davinci-003/completions`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          prompt: prompt,
+          temperature: 0.7,
+          top_p: 1,
+          frequency_penalty: 0,
+          presence_penalty: 0,
+          max_tokens: 800,
+          n: 1,
+        }),
+      }
+    );
+    const json = await response.json();
+    setGeneratedScript(json.choices[0].text);
+  };
   return (
     <div className="generate">
       <Navbar></Navbar>
@@ -23,40 +50,8 @@ export default function Generate() {
             Generated Script
           </h1>
           <h1 className="text-center my-2 text-lg">NewPresentation.pptx</h1>
-          <div className="slide-preview-content w-3/12 m-auto">
-            <img
-              src={preview}
-              alt="Slide1"
-              className="border-4 border-neutral-800 rounded-lg overflow-hidden"
-            />
-            <div className="text-center my-2 text-lg">
-              {" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-10 h-10 inline mx-4 my-2"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span className="inline"> Slide 1 of 16</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-10 h-10 inline mx-4 my-2"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
+          <div className="slide-preview-content w-3/12 mx-auto my-10">
+            <PresentationViewer url="https://firebasestorage.googleapis.com/v0/b/sdgp-squadr.appspot.com/o/files%2FWorkInProgress.pptx?alt=media&token=0a056ffd-4a17-45f7-931e-33f86a27c373"/>
           </div>
         </div>
         <div className="script text-center mx-auto bg-red w-10/12">

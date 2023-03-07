@@ -1,5 +1,6 @@
 import Navbar from "../components/NavBar";
 import { Button, Input, Checkbox } from "@material-tailwind/react";
+import { Button, Input, Checkbox } from "@material-tailwind/react";
 import illustration from "../static/images/login-illustration.png";
 import blob from "../static/images/blob.png";
 import { FcGoogle } from "react-icons/fc";
