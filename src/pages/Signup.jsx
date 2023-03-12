@@ -2,8 +2,11 @@ import Navbar from "../components/NavBar";
 import { Button, Input } from "@material-tailwind/react";
 import illustration from "../static/images/login-illustration.png";
 import blob from "../static/images/blob.png";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Signup() {
+  const navigate = useNavigate();
   return (
     <div className="upload">
       <Navbar></Navbar>
@@ -73,9 +76,33 @@ export default function Signup() {
               </div>
             </div>
             <div className="flex flex-row-3 justify-between text-textPurple">
+            <Button
+                variant="gradient"
+                color="deep-purple"
+                size="md"
+                className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
+                onClick={() => navigate("/privacypolicy")}
+              >
               <p>Terms</p>
+              </Button>
+              <Button
+                variant="gradient"
+                color="deep-purple"
+                size="md"
+                className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
+                onClick={() => navigate("/privacypolicy")}
+              >
               <p>Privacy</p>
+              </Button>
+              <Button
+                variant="gradient"
+                color="deep-purple"
+                size="md"
+                className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
+                onClick={() => navigate("/privacypolicy")}
+              >
               <p>Security</p>
+              </Button>
             </div>
           </div>
         </div>

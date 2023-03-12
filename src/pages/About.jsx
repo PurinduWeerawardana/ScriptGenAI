@@ -88,9 +88,7 @@ export default function Home() {
                         </p>
                     </div>
 
-
-                </h1>
-                <div className="flex justify-center">
+                    <div className="flex justify-center">
                     <Button
                         variant="gradient"
                         color="deep-purple"
@@ -103,8 +101,10 @@ export default function Home() {
                     </Button>
 
                 </div>
+                </h1>
+                
             </div>
-
+        
         </div>
     );
 }
