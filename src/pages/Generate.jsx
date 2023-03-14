@@ -4,10 +4,12 @@ import PresentationViewer from "../components/PresentationViewer";
 import { Button } from "@material-tailwind/react";
 import TextLoader from "../components/TextLoader";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Generate() {
   const [generatedScript, setGeneratedScript] = useState("");
-
+  const { state } = useLocation();
+  const link = state.link;
   const generateScript = async (e) => {
     e.preventDefault();
     setGeneratedScript(
@@ -51,7 +53,7 @@ export default function Generate() {
           </h1>
           <h1 className="text-center my-2 text-lg">NewPresentation.pptx</h1>
           <div className="slide-preview-content w-3/12 mx-auto my-10">
-            <PresentationViewer url="https://firebasestorage.googleapis.com/v0/b/sdgp-squadr.appspot.com/o/files%2FWorkInProgress.pptx?alt=media&token=0a056ffd-4a17-45f7-931e-33f86a27c373"/>
+            <PresentationViewer url = {link} />
           </div>
         </div>
         <div className="script text-center mx-auto bg-red w-10/12">
@@ -72,7 +74,7 @@ export default function Generate() {
               className="hidden lg:inline-block px-8 m-2 rounded-full"
               onClick={generateScript}
             >
-              Re-Generate
+              Generate
             </Button>
           </div>
         </div>
