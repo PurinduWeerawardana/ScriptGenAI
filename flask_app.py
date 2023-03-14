@@ -2,11 +2,14 @@ from flask import Flask
 import re
 import openai
 import urllib
+import numpy as np
+from PIL import Image
+from tensorflow import keras
 from urllib import request
+
 
 # set API key
 openai.api_key = "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"
-
 
 def generateScripts(slides):
     print("Completing...")
@@ -29,14 +32,12 @@ def generateScripts(slides):
         generatedScripts.append(completion.choices[0].text)
     return generatedScripts
 
-
 app = Flask(__name__)
 
 
 @app.route('/')
 def hello_world():
     return 'Welcome to ScriptGenAI!'
-
 
 @app.route('/generate/<string:fileName>/<string:accessToken>', methods=['GET'])
 def generateAll(fileName, accessToken):
@@ -49,10 +50,39 @@ def generateAll(fileName, accessToken):
     generatedScripts = generateScripts(slides)
     return ',\n'.join(generatedScripts)
 
+@app.route('/predict', methods=['GET'])
+def predict():
+
+    model = keras.models.load_model("Chart_Classification_79.h5")
+
+    #Preprocess to convert png(Transparent images) to jpeg
+    # Load and preprocess the image
+    img = Image.open("174.png")
+    img = img.resize((300, 300))
+    x = np.array(img)
+    x = x[:, :, :3]  # Remove the 4th channel
+    x = x / 255.  # Scale pixel values to [0, 1]
+    x = np.expand_dims(x, axis=0)  # Add an extra dimension
+
+    # Pass the image through the model
+    preds = model.predict(x)
+
+    # Get the class with the highest predicted probability
+    class_idx = np.argmax(preds[0])
+
+    # Get the class labels from the generator
+    # class_labels = train_generator.class_indices
+
+    class_labels = {'Vertical Bar Chart': 0, 'Compound Vertical Bar Chart': 1, 'Horizontal Bar Chart': 2,
+                    'Line Chart': 3, 'Multi Line Chart': 4, 'Pie Chart': 5, 'Stacked Vertical Bar Chart': 6}
+    class_labels = {v: k for k, v in class_labels.items()}
+
+    # Display the predicted class
+    return "The image is predicted to be a " + class_labels[class_idx]
 
 @app.route('/check')
 def check():
-    URL = "https://firebasestorage.googleapis.com/v0/b/sdgp-squadr.appspot.com/o/files%2F22_5COSC020W_LECT02_EERD.pptx?alt=media&token=eacdf924-d25b-42ad-aefe-f281a76234c2"
+    URL = "https://firebasestorage.googleapis.com/v0/b/sdgp-squadr.appspot.com/o/files%2Fsample_slide_deck.txt?alt=media&token=208755ae-61ca-4f52-9559-10c84d80d9ca"
     response = request.urlretrieve(URL, "presentation.pptx")
     return "Noice!"
 
