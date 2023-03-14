@@ -25,8 +25,8 @@ export default function Signup() {
           <div className="flex w-10/12 flex-col gap-6">
             <Input size="lg" color="indigo" label="Name" />
             <Input size="lg" color="indigo" label="Email Address" />
-            <Input size="lg" color="indigo" label="Password" />
-            <Input size="lg" color="indigo" label="Confirm Password" />
+            <Input size="lg" color="indigo" label="Password" type ="password"/>
+            <Input size="lg" color="indigo" label="Confirm Password" type ="password" />
             <Button color="deep-purple" size="lg" block>
               Sign Up
             </Button>

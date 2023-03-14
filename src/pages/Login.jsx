@@ -7,6 +7,7 @@ import { BsFacebook } from "react-icons/bs";
 import { signInWithGoogle } from "../firebase-config";
 import { signInWithFacebook } from "../firebase-config";
 
+
 export default function Login() {
   return (
     <div className="upload">
