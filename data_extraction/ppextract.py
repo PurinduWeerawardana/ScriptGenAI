@@ -53,7 +53,7 @@ for eachfile in glob.glob(filename):
     prs = Presentation(eachfile)
     for slide in prs.slides:
         print("----------------------")
-        print("This is slide: ", slide_count)
+        print("S: ", slide_count)
         slide_count = slide_count+1
 
 
@@ -84,7 +84,7 @@ for eachfile in glob.glob(filename):
         for shape in slide.shapes:
             if hasattr(shape,"text"):
                 if not shape.text.startswith("#")and not shape.text.startswith("-"):
-                    print(shape.text + "TEXT")
+                    print(shape.text )
                     print()
 
        
