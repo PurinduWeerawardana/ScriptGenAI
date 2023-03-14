@@ -4,8 +4,9 @@ import glob
 import os
 
 
+
 slide_count, image_count, table_count = 0, 0, 0
-filename = 'lecture.pptx'
+filename = 'Xpath.pptx'
 
 def iter_picture_shapes(prs):
     for slide in prs.slides:
@@ -32,19 +33,7 @@ def iter_to_nonempty_table_cells(tbl):
          txt = type("")(cell.text)
          txt = txt.strip()
          yield txt
-               
-def GPT_Completion(texts):
-    ## Call the API key under your account (in a secure way)
-    openai.api_key = "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"
-    response = openai.Completion.create(
-    engine="text-davinci-002",
-    prompt =  texts,
-    temperature = 0.6,
-    top_p = 1,
-    max_tokens = 500,
-    frequency_penalty = 0,
-    presence_penalty = 0)
-    return print(response.choices[0].text)
+
 
 for picture in iter_picture_shapes(Presentation(filename)):
     image = picture.image
@@ -57,22 +46,48 @@ for picture in iter_picture_shapes(Presentation(filename)):
         
     with open(image_filename, 'wb') as f:
         f.write(image_bytes)
-        print("Image Saved", image_count, slide_count)
+        #print("Image Saved", image_count, slide_count)
         
 slide_count = 0               
 for eachfile in glob.glob(filename):            
     prs = Presentation(eachfile)
-    
-
-    print("----------------------")
     for slide in prs.slides:
+        print("----------------------")
         print("This is slide: ", slide_count)
         slide_count = slide_count+1
+
+
+        #Find the heading paragraph in the slide
+        heading=None
         for shape in slide.shapes:
             if hasattr(shape, "text"):
-                print(shape.text)
-                print()
+                if shape.text.startswith("#"):
+                    heading=shape.text.strip("#")
+                    break
+        if heading is not None:
+            print("Heading:",heading)
 
+        #find the sub points for the heading
+
+            sub_points=[]
+            for shape in slide.shapes:
+                if hasattr(shape,"text"):
+                    if shape.text.startswith("-"):
+                        sub_points.append(shape.textstrip("-"))
+
+            if len(sub_points)>0:
+                print("Sub Points:")
+                for sub_point in sub_points:
+                    print("- " +sub_point)
+
+        #print the text in shapes
+        for shape in slide.shapes:
+            if hasattr(shape,"text"):
+                if not shape.text.startswith("#")and not shape.text.startswith("-"):
+                    print(shape.text + "TEXT")
+                    print()
+
+       
 # extract tables from slide-show presentation
 tables = get_tables_from_presentation(prs)
 
@@ -86,14 +101,4 @@ for tbl in tables:
 print("There are \n Slides: ", slide_count, "\n Slides that have images: ",image_count, "\n Slides that have tables", table_count)
 
 
-#OPEN AI
-"""
-text = '''How Do Neural Networks Compute?
 
-Activation = the final value of a particular unit.
-
-Calculated by adding inputs and bias
-
-Activation function'''
-GPT_Completion(text)
-"""
