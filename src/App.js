@@ -6,6 +6,7 @@ import Generate from "./pages/Generate";
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 
+
 function App() {
   return (
     <Routes>
