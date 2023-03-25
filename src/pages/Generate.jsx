@@ -21,7 +21,7 @@ export default function Generate() {
     };
     var responseCode = "";
     fetch(
-      "http://scriptgenai.pythonanywhere.com/presentation",
+      "https://scriptgenai.pythonanywhere.com/presentation",
       requestOptions
     ).then((response) => {
       console.log(response.status);
