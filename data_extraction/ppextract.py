@@ -84,7 +84,7 @@ for eachfile in glob.glob(filename):
         for shape in slide.shapes:
             if hasattr(shape,"text"):
                 if not shape.text.startswith("#")and not shape.text.startswith("-"):
-                    print(shape.text )
+                    print(shape.text)
                     print()
 
        
