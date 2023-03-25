@@ -67,16 +67,8 @@ function App() {
         // download url
         getDownloadURL(uploadTask.snapshot.ref).then((url) => {
           console.log(url);
-          navigate("/generate",{ state: { link: url} })
-          // const requestOptions = {
-          //   method: "POST",
-          //   headers: { link: url },
-          // };
-          // fetch(
-          //   "https://cors-anywhere.herokuapp.com/https://testthamash.pythonanywhere.com/presentation",
-          //   requestOptions
-          // ).then((response) => console.log(response.status))
-          // .then(() => {navigate("/generate",{ state: { link: url} })});
+          console.log(file.name);
+          navigate("/generate", { state: { link: url, fileName: file.name } });
         });
       }
     );
