@@ -16,22 +16,18 @@ export default function Generate() {
       <TextLoader lines={10} width={"100%"} height="10" lineHeight="h-2" />
     );
     const requestOptions = {
-      method: "POST",
+      method: "GET",
       headers: { link: link },
     };
-    var responseCode = "";
-    fetch(
-      "https://scriptgenai.pythonanywhere.com/presentation",
+    var response = await fetch(
+      "https://scriptgenai.pythonanywhere.com/scripts",
       requestOptions
-    ).then((response) => {
-      console.log(response.status);
-      responseCode = response.status;
-      if (responseCode === 200) {
-        setGeneratedScript("Script Generated");
-      } else {
-        setGeneratedScript("Script Generation Failed!");
-      }
-    });
+    );
+    if (!response.ok) {
+      setGeneratedScript("Failed to generate script!");
+    }
+    var script = await response.json();
+    setGeneratedScript(script.script);
   };
   return (
     <div className="generate">
