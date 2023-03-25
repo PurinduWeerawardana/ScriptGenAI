@@ -10,6 +10,7 @@ export default function Generate() {
   const [generatedScript, setGeneratedScript] = useState("");
   const { state } = useLocation();
   const link = state.link;
+  const fileName = state.fileName.replace(".pptx", "");
   const generateScript = async (e) => {
     e.preventDefault();
     setGeneratedScript(
@@ -29,6 +30,18 @@ export default function Generate() {
     var script = await response.json();
     setGeneratedScript(script.script);
   };
+
+  var downloadTxtFile = () => {
+    const element = document.createElement("a");
+    const file = new Blob([generatedScript], {
+      type: "text/plain",
+    });
+    element.href = URL.createObjectURL(file);
+    element.download = fileName + ".txt";
+    document.body.appendChild(element); // Required for this to work in FireFox
+    element.click();
+  };
+
   return (
     <div className="generate">
       <Navbar></Navbar>
@@ -40,19 +53,22 @@ export default function Generate() {
           <h1 className="text-center text-4xl sm:text-4xl font-sans font-semibold">
             Generated Script
           </h1>
-          <h1 className="text-center my-2 text-lg">NewPresentation.pptx</h1>
+          <h1 className="text-center my-2 text-lg">{fileName}</h1>
           <div className="slide-preview-content w-3/12 mx-auto my-10">
             <PresentationViewer url={link} />
           </div>
         </div>
         <div className="script text-center mx-auto bg-red w-10/12">
-          <p className="generated-content">{generatedScript}</p>
+          <p id="script" className="generated-content">
+            {generatedScript}
+          </p>
           <div className="buttons flex justify-center my-4">
             <Button
               variant="gradient"
               color="deep-purple"
               size="md"
               className="hidden lg:inline-block px-8 m-2 rounded-full"
+              onClick={downloadTxtFile}
             >
               <span>Download</span>
             </Button>
