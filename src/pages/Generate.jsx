@@ -21,7 +21,7 @@ export default function Generate() {
     };
     var responseCode = "";
     fetch(
-      "https://cors-anywhere.herokuapp.com/https://testthamash.pythonanywhere.com/presentation",
+      "https://cors-anywhere.herokuapp.com/http://scriptgenai.pythonanywhere.com/presentation",
       requestOptions
     ).then((response) => {
       console.log(response.status);
