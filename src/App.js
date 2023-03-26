@@ -5,6 +5,8 @@ import Signup from "./pages/Signup";
 import Generate from "./pages/Generate";
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/About";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
       <Route path="/signup" element={<Signup />}></Route>
       <Route path="/about" element={<About />}></Route>
       <Route path="/generate" element={<Generate />}></Route>
+      <Route path="/privacypolicy" element={<PrivacyPolicy />}></Route>
       <Route path="/*" element={<h1>404 not found Squadrons</h1>}></Route>
     </Routes>
   );

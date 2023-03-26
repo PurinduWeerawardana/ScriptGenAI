@@ -2,6 +2,7 @@ import Navbar from "../components/NavBar";
 import { Button, Input, Checkbox } from "@material-tailwind/react";
 import illustration from "../static/images/login-illustration.png";
 import blob from "../static/images/blob.png";
+import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import { signInWithGoogle } from "../firebase-config";
@@ -10,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function Login() {
+
 
   const navigate = useNavigate();
 
@@ -25,7 +27,6 @@ export default function Login() {
 
   }
 
- 
 
   return (
     <div className="upload">
@@ -83,6 +84,35 @@ export default function Login() {
                   />
                 </div>
               </div>
+            </div>
+            <div className="flex flex-row-3 justify-between text-textPurple">
+            <Button
+                variant="gradient"
+                color="deep-purple"
+                size="md"
+                className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
+                onClick={() => navigate("/privacypolicy")}
+              >
+              <p>Terms</p>
+              </Button>
+              <Button
+                variant="gradient"
+                color="deep-purple"
+                size="md"
+                className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
+                onClick={() => navigate("/privacypolicy")}
+              >
+              <p>Privacy</p>
+              </Button>
+              <Button
+                variant="gradient"
+                color="deep-purple"
+                size="md"
+                className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
+                onClick={() => navigate("/privacypolicy")}
+              >
+              <p>Security</p>
+              </Button>
             </div>
           </div>
         </div>
