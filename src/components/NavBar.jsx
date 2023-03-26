@@ -7,9 +7,11 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import logo from "../static/images/logo.png";
+import { signOutUser, getCurrentUser } from "../firebase-config";
 
 export default function NavBar() {
   const [openNav, setOpenNav] = useState(false);
+  const [isUserExist, setIsUserExist] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,6 +19,21 @@ export default function NavBar() {
       "resize",
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
+  }, []);
+
+  useEffect(() => {
+    const checkCurrentUser = async () => {
+      const user = await getCurrentUser();
+      if (user) {
+        console.log(user);
+        setIsUserExist(true);
+      } else {
+        console.log(user);
+        setIsUserExist(false);
+      }
+    };
+
+    checkCurrentUser().then();
   }, []);
 
   return (
@@ -31,29 +48,7 @@ export default function NavBar() {
           }}
         />
         <div className="">
-          <Button
-            variant="outlined"
-            color="deep-purple"
-            size="md"
-            className="hidden lg:inline-block px-8 m-2 rounded-full"
-            onClick={() => {
-              navigate("/Login");
-            }}
-          >
-            <span>Log in</span>
-          </Button>
-          <Button
-            variant="gradient"
-            color="deep-purple"
-            size="md"
-            className="hidden lg:inline-block px-8 m-2 rounded-full"
-            onClick={() => {
-              window.location.href = "#";
-              navigate("/Signup");
-            }}
-          >
-            <span>Sign up</span>
-          </Button>
+          <Buttons isUserExist={isUserExist} setIsUserExist={setIsUserExist}/>
         </div>
         <IconButton
           variant="text"
@@ -116,5 +111,55 @@ export default function NavBar() {
         </div>
       </MobileNav>
     </Navbar>
+  );
+}
+
+function Buttons({ isUserExist,setIsUserExist }) {
+
+  const navigate = useNavigate();
+
+  if (isUserExist) {
+    return (
+      <Button
+        variant="outlined"
+        color="deep-purple"
+        size="md"
+        className="hidden lg:inline-block px-8 m-2 rounded-full"
+        onClick={() => {
+          signOutUser();
+          navigate("/Login");
+          
+        }}
+      >
+        <span>Sign Out</span>
+      </Button>
+    );
+  }
+  return (
+    <>
+      <Button
+        variant="outlined"
+        color="deep-purple"
+        size="md"
+        className="hidden lg:inline-block px-8 m-2 rounded-full"
+        onClick={() => {
+          navigate("/Login");
+        }}
+      >
+        <span>Log in</span>
+      </Button>
+      <Button
+        variant="gradient"
+        color="deep-purple"
+        size="md"
+        className="hidden lg:inline-block px-8 m-2 rounded-full"
+        onClick={() => {
+          window.location.href = "#";
+          navigate("/Signup");
+        }}
+      >
+        <span>Sign up</span>
+      </Button>
+    </>
   );
 }

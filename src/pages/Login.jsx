@@ -6,9 +6,27 @@ import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import { signInWithGoogle } from "../firebase-config";
 import { signInWithFacebook } from "../firebase-config";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Login() {
+
+  const navigate = useNavigate();
+
+  const handleLogIn = async () =>{
+    try{
+      const user = await signInWithGoogle();
+      console.log(user);
+      navigate("/upload");
+
+    }catch(error){
+      console.error(error);
+    }
+
+  }
+
+ 
+
   return (
     <div className="upload">
       <Navbar></Navbar>
@@ -21,13 +39,13 @@ export default function Login() {
         </div>
         <div className="right">
           <h1 className="text-left text-4xl sm:text-4xl font-sans font-semibold mb-4">
-            Log<span className="text-textPurple"> In</span>
+            <span className="text-textPurple"> Log In</span>
           </h1>
           <div className="flex w-10/12 flex-col gap-6">
             <Input
               size="lg"
               color="indigo"
-              label="Username or E-mail address"
+              label="E-mail address"
             />
             <div id="password-wrapper" className="relative">
               <Input
@@ -42,19 +60,20 @@ export default function Login() {
                 label="Remember Me"
                 ripple={true}
               />
-              <div className="absolute right-0 flex flex-row-10 justify-between">
-                <p className="text-sm text-textPurple">Forgot Password?</p>
-              </div>
+              {/* <div className="absolute right-0 flex flex-row-10 justify-between">
+                <span className="text-sm text-textPurple">Forgot Password?</span>
+              </div> */}
             </div>
-            <Button color="deep-purple" size="lg" block>
-              Log in
+            <Button color="deep-purple" size="lg" block >  
+            Log In                     
             </Button>
             <div id="social-login">
-              <p className="text-center text-sm">Need an account?</p>
-              <p className="text-right text-textPurple">Sign up</p>
+              <p className="text-center text-sm underline">Don't have an account? Sign Up</p>
+             
+          
               <div className="flex flex-row-3 justify-around">
                 <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
-                  <FcGoogle onClick={signInWithGoogle} size={30} />
+                  <FcGoogle onClick={handleLogIn} size={30} />
                 </div>
                 <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
                   <BsFacebook
@@ -70,4 +89,5 @@ export default function Login() {
       </div>
     </div>
   );
+
 }

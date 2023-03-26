@@ -28,11 +28,10 @@ export default function Signup() {
             <Input size="lg" color="indigo" label="Password" type ="password"/>
             <Input size="lg" color="indigo" label="Confirm Password" type ="password" />
             <Button color="deep-purple" size="lg" block>
-              Sign Up
+              Create Account
             </Button>
             <div id="social-login">
-              <p className="text-center text-sm">Already have an account?</p>
-              <p className="text-right text-textPurple">Log in</p>
+              <p className="text-center text-sm underline">Already have an account? Log In</p>
 
               <div className="flex flex-row-3 justify-around">
                 <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
