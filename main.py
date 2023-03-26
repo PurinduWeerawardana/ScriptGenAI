@@ -9,9 +9,9 @@ from urllib import request
 import ppextractmodule
 
 
-
 # set API key
 openai.api_key = "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"
+
 
 def generateScripts(slides):
     print("Completing...")
@@ -34,6 +34,7 @@ def generateScripts(slides):
         print(completion.choices[0].text)
         generatedScripts.append(completion.choices[0].text)
     return generatedScripts
+
 
 def generateSingleScript(slides):
     print("Completing...")
@@ -59,14 +60,17 @@ def generateSingleScript(slides):
 app = Flask(__name__)
 cors = CORS(app, resources={r"/scripts": {"origins": "*"}})
 
+
 @app.route('/')
 def hello_world():
     return 'Hello from ScriptGenAI'
+
 
 def extractAndGenerate():
     output = ppextractmodule.process("presentation.pptx")
     generated = generateSingleScript(output)
     return generated
+
 
 @app.route('/scripts', methods=['GET'])
 def scripts():
@@ -75,4 +79,3 @@ def scripts():
     script = extractAndGenerate()
     data = {'script': script}
     return jsonify(data)
-

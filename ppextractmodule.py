@@ -102,5 +102,5 @@ def process(filename):
             out = out + "|".join(it) + "\n"
 
     out = out + "There are \n Slides: " + str(slide_count) + "\n Slides that have images: " + str(
-    image_count) + "\n Slides that have tables" + str(table_count) + ".\n"
+        image_count) + "\n Slides that have tables" + str(table_count) + ".\n"
     return out
