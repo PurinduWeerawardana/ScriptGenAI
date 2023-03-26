@@ -7,26 +7,19 @@ import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import { signInWithGoogle } from "../firebase-config";
 import { signInWithFacebook } from "../firebase-config";
-import { useNavigate } from "react-router-dom";
-
 
 export default function Login() {
-
-
   const navigate = useNavigate();
 
-  const handleLogIn = async () =>{
-    try{
+  const handleLogIn = async () => {
+    try {
       const user = await signInWithGoogle();
       console.log(user);
       navigate("/upload");
-
-    }catch(error){
+    } catch (error) {
       console.error(error);
     }
-
-  }
-
+  };
 
   return (
     <div className="upload">
@@ -43,11 +36,7 @@ export default function Login() {
             <span className="text-textPurple"> Log In</span>
           </h1>
           <div className="flex w-10/12 flex-col gap-6">
-            <Input
-              size="lg"
-              color="indigo"
-              label="E-mail address"
-            />
+            <Input size="lg" color="indigo" label="E-mail address" />
             <div id="password-wrapper" className="relative">
               <Input
                 type="password"
@@ -65,13 +54,14 @@ export default function Login() {
                 <span className="text-sm text-textPurple">Forgot Password?</span>
               </div> */}
             </div>
-            <Button color="deep-purple" size="lg" block >  
-            Log In                     
+            <Button color="deep-purple" size="lg" block>
+              Log In
             </Button>
             <div id="social-login">
-              <p className="text-center text-sm underline">Don't have an account? Sign Up</p>
-             
-          
+              <p className="text-center text-sm underline">
+                Don't have an account? Sign Up
+              </p>
+
               <div className="flex flex-row-3 justify-around">
                 <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
                   <FcGoogle onClick={handleLogIn} size={30} />
@@ -86,14 +76,14 @@ export default function Login() {
               </div>
             </div>
             <div className="flex flex-row-3 justify-between text-textPurple">
-            <Button
+              <Button
                 variant="gradient"
                 color="deep-purple"
                 size="md"
                 className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
                 onClick={() => navigate("/privacypolicy")}
               >
-              <p>Terms</p>
+                <p>Terms</p>
               </Button>
               <Button
                 variant="gradient"
@@ -102,7 +92,7 @@ export default function Login() {
                 className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
                 onClick={() => navigate("/privacypolicy")}
               >
-              <p>Privacy</p>
+                <p>Privacy</p>
               </Button>
               <Button
                 variant="gradient"
@@ -111,7 +101,7 @@ export default function Login() {
                 className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
                 onClick={() => navigate("/privacypolicy")}
               >
-              <p>Security</p>
+                <p>Security</p>
               </Button>
             </div>
           </div>
@@ -119,5 +109,4 @@ export default function Login() {
       </div>
     </div>
   );
-
 }
