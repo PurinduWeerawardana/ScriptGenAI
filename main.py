@@ -56,6 +56,30 @@ def generateSingleScript(slides):
     generatedScripts = completion.choices[0].text
     return generatedScripts
 
+@app.route('/predict', methods=['GET'])
+def predict():
+
+    generatedScriptGraph = []
+    graphInfo = ReadGraphOCR.readGraph('VBC71.jpg') #Add the file from the presentation file
+    print(graphInfo)
+
+    promptForGPT = "Write a 150 word Description about the following graph. use the following coordinated to get a better understanding->\\n" + \
+    re.sub('S\d:', '', graphInfo)
+   
+        # call openai for completion
+    completion = openai.Completion.create(
+            engine="text-davinci-003",
+            prompt=promptForGPT,
+            temperature=0.7,
+            top_p=1,
+            frequency_penalty=0,
+        presence_penalty=0,
+        max_tokens=200)
+        # append to generated scripts list
+    generatedScriptGraph.append(completion.choices[0].text)
+    print(generatedScriptGraph)
+    return generatedScriptGraph
+
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/scripts": {"origins": "*"}})
