@@ -28,15 +28,15 @@ export default function Signup() {
             <Button color="deep-purple" size="lg" block>
               Sign Up
             </Button>
-            <div id="social-login" className="flex flex-col gap-2 sm:flex-row sm:justify-around sm:items-center">
-              <p className="text-center text-sm">Or log in with</p>
-              <div className="flex gap-4 justify-around">
-                <Button
-                  color="white"
-                  size="lg"
-                  ripple="light"
-                  className="rounded-full"
-                >
+            <div id="social-login">
+                <p className="text-center text-sm">Or log in with</p>
+                <div className="flex flex-row-3 justify-around">
+                  <Button
+                    color="white"
+                    size="lg"
+                    ripple="light"
+                    className="rounded-full"
+                  >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="26"
