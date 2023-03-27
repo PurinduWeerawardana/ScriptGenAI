@@ -31,7 +31,7 @@ export default function Home() {
                 </h1>
                     
     <section class="bg-indigo-100 dark:bg-gray-900">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-13 lg:px-1 "><br/><br/>
+    <div class="py-8 px-4 mx-auto max-w-screen-lg lg:py-13 lg:px-1 "><br/><br/>
       <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
 
           <div class="items-center bg-indigo-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">

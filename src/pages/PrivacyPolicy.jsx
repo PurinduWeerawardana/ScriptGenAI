@@ -27,7 +27,7 @@ export default function Home() {
           collect, how we use it, and how we protect it. By using our website and
           services, you agree to the terms of this Privacy Policy.</b>
         </p>
-        <div className="privacy-container overflow-y-auto border-2 border-indigo-800 h-96">
+        <div className="privacy-container overflow-y-auto border-2 border-indigo-200">
 
         <h2 className="text-lg text-indigo-900 my-6 mx-2"><b>Information We Collect</b></h2>
         <p className="text-justify text-lg text-gray-700 my-6 mx-2">
@@ -84,15 +84,14 @@ export default function Home() {
         <h2 className="text-lg text-indigo-900 my-6 mx-2"><b>Contact Us</b></h2>
         <p className="text-justify text-lg text-gray-700 my-6 mx-2">
             <b>If you have any questions about this Privacy Policy or our practices, 
-            please contact us;   <br/>Rajani Soriyaarachchi     - <font color ="indigo"><u><a href ="rajani.20210190@iit.ac.lk">rajani.20210190@iit.ac.lk</a></u></font>
-                                 <br/>Lakshan Costa             - <font color ="indigo"><u><a href ="dinujaya.20210418@iit.ac.lk">dinujaya.20210418@iit.ac.lk</a></u></font>
-                                 <br/>Purimdu Weerawardana      - <font color ="indigo"><u><a href ="Purindu.20210379@iit.ac.lk">Purindu.20210379@iit.ac.lk</a></u></font>
-                                 <br/>Jaiyramanan Vijayaalayan  - <font color ="indigo"><u><a href ="vijayaalayan.20200276@iit.ac.lk">vijayaalayan.20200276@iit.ac.lk</a></u></font>
-                                 <br/>Shiwarne Silva            - <font color ="indigo"><u><a href ="shiwarne.20210059@iit.ac.lk">shiwarne.20210059@iit.ac.lk</a></u></font></b>
+            please contact us;   <br/>Rajani Soriyaarachchi     - <font color ="indigo" size="3"><u><a href ="rajani.20210190@iit.ac.lk">rajani.20210190@iit.ac.lk</a></u></font>
+                                 <br/>Lakshan Costa             - <font color ="indigo" size="3"><u><a href ="dinujaya.20210418@iit.ac.lk">dinujaya.20210418@iit.ac.lk</a></u></font>
+                                 <br/>Purimdu Weerawardana      - <font color ="indigo" size="3"><u><a href ="Purindu.20210379@iit.ac.lk">Purindu.20210379@iit.ac.lk</a></u></font>
+                                 <br/>Jaiyramanan Vijayaalayan  - <font color ="indigo" size="3"><u><a href ="vijayaalayan.20200276@iit.ac.lk">vijayaalayan.20200276@iit.ac.lk</a></u></font>
+                                 <br/>Shiwarne Silva            - <font color ="indigo" size="3"><u><a href ="shiwarne.20210059@iit.ac.lk">shiwarne.20210059@iit.ac.lk</a></u></font></b>
         </p>
 
         </div>
-    </div>
         <div className="text-center">
         <Button
             variant="gradient"
@@ -103,6 +102,7 @@ export default function Home() {
         >
             <span>Back to home</span>
         </Button>
+    </div>
         </div>
     </div>
     
