@@ -91,9 +91,33 @@ export default function Login() {
               </div>
             </div>
             <div className="flex flex-row-3 justify-between">
+            <Button
+                variant="gradient"
+                color="deep-purple"
+                size="md"
+                className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
+                onClick={() => navigate("/privacypolicy")}
+              >
               <p>Terms</p>
+              </Button>
+              <Button
+                variant="gradient"
+                color="deep-purple"
+                size="md"
+                className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
+                onClick={() => navigate("/privacypolicy")}
+              >
               <p>Privacy</p>
+              </Button>
+              <Button
+                variant="gradient"
+                color="deep-purple"
+                size="md"
+                className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
+                onClick={() => navigate("/privacypolicy")}
+              >
               <p>Security</p>
+              </Button>
             </div>
           </div>
         </div>
