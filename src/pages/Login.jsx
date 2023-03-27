@@ -10,7 +10,7 @@ export default function Login() {
       <div className="blob">
         <img src={blob} alt="" />
       </div>
-      <div className="content grid gap-4 grid-cols-2 w-10/12 my-32 mx-auto">
+      <div className="content grid gap-4 grid-cols-1 sm:grid-cols-2 w-10/12 my-32 mx-auto">
         <div className="left my-auto">
           <img src={illustration} alt="" className="w-9/12 m-auto" />
         </div>
@@ -18,7 +18,7 @@ export default function Login() {
           <h1 className="text-left text-4xl sm:text-4xl font-sans font-semibold mb-4">
             Log<span className="text-textPurple"> In</span>
           </h1>
-          <div className="flex w-10/12 flex-col gap-6">
+          <div className="flex flex-col gap-6">
             <Input
               size="lg"
               color="indigo"
