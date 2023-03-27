@@ -2,6 +2,7 @@ import Navbar from "../components/NavBar";
 import { Button, Input, Checkbox } from "@material-tailwind/react";
 import illustration from "../static/images/login-illustration.png";
 import blob from "../static/images/blob.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   return (
