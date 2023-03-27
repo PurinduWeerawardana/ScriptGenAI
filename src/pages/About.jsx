@@ -43,7 +43,7 @@ export default function Home() {
                       Rajani Sooriyaarachchi
                   </h3>
                   <span class="text-gray-500 dark:text-gray-400"><b>Front-End Developer</b></span>
-                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">20210190 / w1867050</p>
+                  <p class="text-[12px] font-bold mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">20210190 / w1867050</p>
                   <ul class="flex space-x-4 sm:mt-0">
                       <li>
                           <a href="https://github.com/RajaniSooriya" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
@@ -80,7 +80,7 @@ export default function Home() {
                       Purindu Weerawardana
                   </h3>
                   <span class="text-gray-500 dark:text-gray-400"><b>Full Stack Developer.</b></span>
-                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">20210379 / w1867462</p>
+                  <p class="text-[12px] font-bold mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">20210379 / w1867462</p>
                   <ul class="flex space-x-4 sm:mt-0">
                       <li>
                           <a href="https://github.com/PurinduWeerawardana" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
@@ -117,7 +117,7 @@ export default function Home() {
                       Lakshan Costa
                   </h3>
                   <span class="text-gray-500 dark:text-gray-400"><b>Backend Developer in AI.</b></span>
-                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">20210418 / w1867568</p>
+                  <p class="text-[12px] font-bold mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">20210418 / w1867568</p>
                   <ul class="flex space-x-4 sm:mt-0">
                       <li>
                           <a href="https://github.com/Lakshan-Costa" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
@@ -154,7 +154,7 @@ export default function Home() {
                       Jaiyramanan Vijayaalayan
                   </h3>
                   <span class="text-gray-500 dark:text-gray-400"><b>Front-End Developer</b></span>
-                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">20200276 / w1868420</p>
+                  <p class="text-[12px] font-bold mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">20200276 / w1868420</p>
                   <ul class="flex space-x-4 sm:mt-0">
                       <li>
                           <a href="https://github.com/jaiyramanan23" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
@@ -181,8 +181,7 @@ export default function Home() {
               </div>
           </div>
 
-        
-          <div class="items-center bg-indigo-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+        <div class="items-center bg-indigo-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
               <a href="#">
                   <img class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="Images/Shiwarne2.png" alt="Shiwarne"></img>
               </a>
@@ -191,7 +190,7 @@ export default function Home() {
                       Shiwarne Silva
                   </h3>
                   <span class="text-gray-500 dark:text-gray-400"><b>Passionate Tech Enthusiast.</b></span>
-                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">20210059 / w1914619</p>
+                  <p class="text-[12px] font-bold mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">20210059 / w1914619</p>
                   <ul class="flex space-x-4 sm:mt-0">
                       <li>
                           <a href="https://github.com/Shiwarne-Silva" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
@@ -217,6 +216,7 @@ export default function Home() {
                   </ul>
               </div>
           </div>
+          
       </div>
       </div>
       </section> 
