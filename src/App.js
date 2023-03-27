@@ -16,8 +16,8 @@ function App() {
       <Route path="/login" element={<Login />}></Route>
       <Route path="/signup" element={<Signup />}></Route>
       <Route path="/about" element={<About />}></Route>
-      <Route path="/privacypolicy" element={<PrivacyPolicy />}></Route>
       <Route path="/generate" element={<Generate />}></Route>
+      <Route path="/privacypolicy" element={<PrivacyPolicy />}></Route>
       <Route path="/*" element={<h1>404 not found Squadrons</h1>}></Route>
     </Routes>
   );
