@@ -28,7 +28,7 @@ export default function Signup() {
             <Button color="deep-purple" size="lg" block>
               Sign Up
             </Button>
-            <div id="social-login">
+            <div id="social-login"> 
                 <p className="text-center text-sm">Or log in with</p>
                 <div className="flex flex-row-3 justify-around">
                   <Button
@@ -80,7 +80,7 @@ export default function Signup() {
                 color="deep-purple"
                 size="md"
                 className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
-                onClick={() => navigate("/privacypolicy")}
+                onClick={() => navigate("/termsPolicy")}
               >
               <p>Terms</p>
               </Button>
