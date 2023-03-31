@@ -20,7 +20,7 @@ export default function Home() {
                 <h1 className="text-center text-4xl sm:text-6xl text-indigo-900 font-sans font-semibold">
                     About us
                 </h1>
-                <h1 className="text-center m-2 text-lg text-indigo-900">
+                <h1 className="text-justify m-2 text-lg text-indigo-900">
                     People who don't conduct presentations regularly, find it difficult to conduct a presentation verbally with a slide deck. Lack of practice, less organized content within the speech, and linguistic errors are some of the reasons that presenters find it challenging to convey the proper idea that they need to deliver in a presentation. Undergraduate students who are doing presentations in different kinds of scenarios have a hard time making presentation speeches(scripts). The ScriptGenAI aims to assist with the mentioned problem by generating scripts and allowing users to modify their scripts in preparation for conducting presentations with confidence about the speech.
                     Graphs are a form of data visualization that are widely used to display information in a concise manner. It is commonly used in presentations. There are situations where presenters have to describe graphs covering all the important information. ScriptGenAI’s primary research is based on analyzing graphs within presentations and generating human-understandable natural language scripts, which is a technology that can be used in numerous other applications as well.
                     <br />
