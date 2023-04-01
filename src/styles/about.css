@@ -1,16 +1,7 @@
-.blob{
-    position: absolute;
-    left: 30.89%;
-    right: 11.67%;
-    top: 3.81%;
-    bottom: 9.61%;
-    z-index: -100;
-}
-
-
 .person-shiwarne:hover{
     flex: 3;
   }
+  
   .person-pic-shiwarne{
     position: absolute;
     height: 35%;
@@ -20,10 +11,11 @@
     filter: grayscale(100%);
     transition: .3s;
   }
+    
   .person-shiwarne:hover .person-pic-shiwarne{
     filter: grayscale(0);
   }
-
+  
   .person-info-shiwarne{
     position: absolute;
     bottom:-10px;
@@ -34,15 +26,18 @@
     transform: translatex(10%);
     transform: translateY(-369%);
   }
+  
   .person-shiwarne:hover .person-info-shiwarne{
     opacity: 1;
     bottom: 60px;
     transition-delay: .6s;
   }
+  
   .person-info-shiwarne h2{
     font-size: 20px;
     color: rgb(167, 90, 182);
   }
+  
   .person-info-shiwarne p{
     color: rgb(167, 90, 182);
     font-style: italic;
@@ -50,13 +45,11 @@
     margin-top: 8px;
     margin-bottom: 20px;
   }
-
   
-
-
   .person-purindu:hover{
     flex: 3;
   }
+  
   .person-pic-purindu{
     position: absolute;
     height:35%;
@@ -66,10 +59,11 @@
     filter: grayscale(100%);
     transition: .3s;
   }
+  
   .person-purindu:hover .person-pic-purindu{
     filter: grayscale(0);
   }
-
+  
   .person-info-purindu{
     position: absolute;
     bottom: -11px;
@@ -80,28 +74,29 @@
     transform: translatex(10%);
     transform: translateY(-370%);
   }
+  
   .person-purindu:hover .person-info-purindu{
     opacity: 1;
     bottom: 60px;
     transition-delay: .6s;
   }
+  
   .person-info-purindu h2{
     font-size: 20px;
     color: rgb(167, 90, 182);
   }
+  
   .person-info-purindu p{
     color: rgb(167, 90, 182);
     font-style: italic;
     margin-top: 8px;
     margin-bottom: 20px;
   }
-
-
-
-
+  
   .person-rajani:hover{
     flex: 3;
   }
+  
   .person-pic-rajani{
     position: absolute;
     height: 35%;
@@ -110,11 +105,12 @@
     transform: translateY(40%);
     filter: grayscale(100%);
     transition: .3s;
-  }
+    }
+  
   .person-rajani:hover .person-pic-rajani{
     filter: grayscale(0);
   }
-
+  
   .person-info-rajani{
     position: absolute;
     bottom: 500px;
@@ -134,19 +130,18 @@
     font-size: 20px;
     color: rgb(167, 90, 182);
   }
+  
   .person-info-rajani p{
     color: rgb(167, 90, 182);
     font-style: italic;
     margin-top: 8px;
     margin-bottom: 20px;
   }
-
-
-
-
+  
   .person-jairamanan:hover{
     flex: 3;
   }
+  
   .person-pic-jairamanan{
     position: absolute;
     height: 35%;
@@ -156,10 +151,11 @@
     filter: grayscale(100%);
     transition: .3s;
   }
+  
   .person-jairamanan:hover .person-pic-jairamanan{
     filter: grayscale(0);
   }
-
+  
   .person-info-jairamanan{
     position: absolute;
     bottom: 500px;
@@ -169,38 +165,42 @@
     transition: .2s;
     transform: translatex(10%);
     transform: translateY(240%);
-  }
+  }  
+  
   .person-jairamanan:hover .person-info-jairamanan{
     opacity: 1;
     bottom: 60px;
     transition-delay: .6s;
   }
+  
   .person-info-jairamanan h2{
     font-size: 20px;
     color: rgb(167, 90, 182);
   }
+  
   .person-info-jairamanan p{
     color: rgb(167, 90, 182);
     font-style: italic;
     margin-top: 8px;
     margin-bottom: 20px;
   }
-
-
-
+  
   *{
     padding: 100;
     overflow: hidden;
     margin: 100;
     font-family: "open sans",sans-serif;
   }
+  
   .team-section{
     height: 150vh;
     display: block;
   }
+  
   .person-lakshan:hover{
     flex: 3;
   }
+  
   .person-pic-lakshan{
     position: absolute;
     height: 35%;
@@ -210,10 +210,11 @@
     filter: grayscale(100%);
     transition: .3s;
   }
+  
   .person-lakshan:hover .person-pic-lakshan{
     filter: grayscale(0);
   }
-
+  
   .person-info-lakshan{
     position: absolute;
     bottom: 500px;
@@ -224,15 +225,18 @@
     transform: translatex(10%);
     transform: translateY(240%);
   }
+  
   .person-lakshan:hover .person-info-lakshan{
     opacity: 1;
     bottom: 60px;
     transition-delay: .6s;
   }
+  
   .person-info-lakshan h2{
     font-size: 20px;
     color: rgb(167, 90, 182);
   }
+  
   .person-info-lakshan p{
     color: rgb(167, 90, 182);
     font-style: italic;
