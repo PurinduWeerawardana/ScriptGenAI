@@ -29,7 +29,7 @@ export default function Signup() {
             <Input size="lg" color="indigo" label="Email Address" />
             <Input size="lg" color="indigo" label="Password" />
             <Input size="lg" color="indigo" label="Confirm Password" />
-            <Button color="deep-purple" size="lg" block>
+            <Button color="deep-purple" size="lg">
               Sign Up
             </Button>
             <div id="social-login">
@@ -51,14 +51,14 @@ export default function Signup() {
               </div>
             </div>
             <div className="flex flex-row-3 justify-between text-textPurple">
-            <Button
+              <Button
                 variant="gradient"
                 color="deep-purple"
                 size="md"
                 className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
                 onClick={() => navigate("/privacypolicy")}
               >
-              <p>Terms</p>
+                <p>Terms</p>
               </Button>
               <Button
                 variant="gradient"
@@ -67,7 +67,7 @@ export default function Signup() {
                 className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
                 onClick={() => navigate("/privacypolicy")}
               >
-              <p>Privacy</p>
+                <p>Privacy</p>
               </Button>
               <Button
                 variant="gradient"
@@ -76,7 +76,7 @@ export default function Signup() {
                 className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
                 onClick={() => navigate("/privacypolicy")}
               >
-              <p>Security</p>
+                <p>Security</p>
               </Button>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import "../styles/Home.css";
+import "../styles/root.css";
 import Navbar from "../components/NavBar";
 import { Button } from "@material-tailwind/react";
 import illustration from "../static/images/home-illustration.png";
@@ -7,14 +7,13 @@ import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const navigate = useNavigate();
-
   return (
     <div className="home">
       <Navbar></Navbar>
       <div className="blob">
         <img src={blob} alt="" />
       </div>
-      <div className="header grid gap-3 grid-rows-60 w-4/6 sm:w-2/3 my-10 m-auto	">
+      <div className="header grid gap-3 grid-rows-60 w-4/6 sm:w-2/3 my-10 m-auto">
         <h1 className="text-center text-base sm:text-xl text-deep-purple-600 uppercase font-sans font-bold">
           Get prepared for presentations easily
         </h1>
@@ -33,7 +32,6 @@ export default function Home() {
             size="md"
             className="bg-indigo-900 text-white font-bold py-4 px-6 m-2 rounded-full"
             onClick={() => navigate("/Login")}
-            
           >
             <span>Get Started</span>
           </Button>
