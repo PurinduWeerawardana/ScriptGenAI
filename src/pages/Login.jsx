@@ -60,9 +60,7 @@ export default function Login() {
                 label="Remember Me"
                 ripple={true}
               />
-              {/* <div className="absolute right-0 flex flex-row-10 justify-between">
-                <span className="text-sm text-textPurple">Forgot Password?</span>
-              </div> */}
+              
             </div>
             <Button color="deep-purple" size="lg" block >  
             Log In                     
