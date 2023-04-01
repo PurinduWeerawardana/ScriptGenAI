@@ -39,7 +39,8 @@ export default function Login() {
         </div>
         <div className="right">
           <h1 className="text-left text-4xl sm:text-4xl font-sans font-semibold mb-4">
-            <span className="text-textPurple"> Log In</span>
+            <span className="text-textPurple"> Log In </span>
+            
           </h1>
           <div className="flex w-10/12 flex-col gap-6">
             <Input
