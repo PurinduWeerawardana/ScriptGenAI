@@ -20,7 +20,7 @@ def about():
 
 @app.route('/predict', methods=['GET'])
 def predict():
-    imagelist = ['sss.png', 'VBC71.jpg', 'asd.jpg'] #add the images from the presentation to this list
+    imagelist = ['sss.png', "111.jpeg", "22.png", "VBC71.jpg", "asd.jpg", "cat.jpg"] #add the images from the presentation to this list
     generatedScriptGraph = []
     for i in imagelist:
         graphInfo = ReadGraphOCR.readGraph(i)
