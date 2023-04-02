@@ -47,11 +47,7 @@ export default function Home() {
           <br />
           ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
           <div class="person-rajani">
-            <img
-              src="Images/Rajani1.png"
-              alt=""
-              class="person-pic-rajani"
-            ></img>
+            <img src="Images/Rajani.png" alt="" class="person-pic-rajani"></img>
           </div>
           <div class="person-info-rajani">
             <h2>
@@ -67,7 +63,7 @@ export default function Home() {
           </div>
           <div class="person-purindu">
             <img
-              src="Images/Purindu1.png"
+              src="Images/Purindu.png"
               alt=""
               class="person-pic-purindu"
             ></img>
@@ -86,7 +82,7 @@ export default function Home() {
           </div>
           <div class="person-lakshan">
             <img
-              src="Images/Lakshan1.png"
+              src="Images/Lakshan.png"
               alt=""
               class="person-pic-lakshan"
             ></img>
@@ -105,7 +101,7 @@ export default function Home() {
           </div>
           <div class="person-jairamanan">
             <img
-              src="Images/Jairamanan1.png"
+              src="Images/Jairamanan.png"
               alt=""
               class="person-pic-jairamanan"
             ></img>
@@ -124,7 +120,7 @@ export default function Home() {
           </div>
           <div class="person-shiwarne">
             <img
-              src="Images/Shiwarne2.png"
+              src="Images/Shiwarne.png"
               alt=""
               class="person-pic-shiwarne"
             ></img>
