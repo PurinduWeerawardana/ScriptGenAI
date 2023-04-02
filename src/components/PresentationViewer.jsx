@@ -1,22 +1,22 @@
-import React, { useRef, useEffect } from 'react';
-import WebViewer from '@pdftron/webviewer';
+import React, { useRef, useEffect } from "react";
+import WebViewer from "@pdftron/webviewer";
 
 const PresentationViewer = (props) => {
   const viewer = useRef(this);
   const url = props.url;
 
-  // if using a class, equivalent of componentDidMount 
+  // if using a class, equivalent of componentDidMount
   useEffect(() => {
     WebViewer(
       {
-        path: '/webviewer/lib',
-        initialDoc: 'https://cors-anywhere.herokuapp.com/' + url,
+        path: "/webviewer/lib",
+        initialDoc: url,
         isReadOnly: true,
-        disabledElements: ['header'],
+        disabledElements: ["header"],
       },
-      viewer.current,
+      viewer.current
     );
-  },);
+  });
 
   return (
     <div>
