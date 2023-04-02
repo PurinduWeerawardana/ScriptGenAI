@@ -15,11 +15,11 @@ export default function Home() {
         <img src={blob} alt="" />
       </div>
 
-      <div className="header grid gap-3 grid-rows-60 w-4/6 sm:w-2/3 my-10 m-auto	">
+      <div className="header grid gap-3 grid-rows-60 w-full sm:w-4/6 md:w-2/3 mx-auto my-10">
         <h1 className="text-center text-4xl sm:text-6xl text-indigo-900 font-sans font-semibold">
           About us
         </h1>
-        <h1 className="text-center m-2 text-lg text-indigo-900">
+        <h1 className="text-justify m-2 text-lg text-indigo-900">
           People who don't conduct presentations regularly, find it difficult to
           conduct a presentation verbally with a slide deck. Lack of practice,
           less organized content within the speech, and linguistic errors are
@@ -39,120 +39,503 @@ export default function Home() {
           that can be used in numerous other applications as well.
           <br />
           <br />
-          <font size="6">
-            <u>
-              <b>Our Team</b>
-            </u>
-          </font>
-          <br />
-          ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-          <div class="person-rajani">
-            <img
-              src="Images/Rajani1.png"
-              alt=""
-              class="person-pic-rajani"
-            ></img>
-          </div>
-          <div class="person-info-rajani">
-            <h2>
-              <b>
-                <b>Rajani Randari</b>
-              </b>
-            </h2>
-            <p>
-              <b>
-                <b>20210190 / w1867050</b>
-              </b>
-            </p>
-          </div>
-          <div class="person-purindu">
-            <img
-              src="Images/Purindu1.png"
-              alt=""
-              class="person-pic-purindu"
-            ></img>
-          </div>
-          <div class="person-info-purindu">
-            <h2>
-              <b>
-                <b>Purindu Thamash</b>
-              </b>
-            </h2>
-            <p>
-              <b>
-                <b>20210379 / w1867462</b>
-              </b>
-            </p>
-          </div>
-          <div class="person-lakshan">
-            <img
-              src="Images/Lakshan1.png"
-              alt=""
-              class="person-pic-lakshan"
-            ></img>
-          </div>
-          <div class="person-info-lakshan">
-            <h2>
-              <b>
-                <b>Lakshan Costa</b>
-              </b>
-            </h2>
-            <p>
-              <b>
-                <b>20210418 / w1867568</b>
-              </b>
-            </p>
-          </div>
-          <div class="person-jairamanan">
-            <img
-              src="Images/Jairamanan1.png"
-              alt=""
-              class="person-pic-jairamanan"
-            ></img>
-          </div>
-          <div class="person-info-jairamanan">
-            <h2>
-              <b>
-                <b>Jaiyramanan Vijayaalayan</b>
-              </b>
-            </h2>
-            <p>
-              <b>
-                <b>20200276 / w1868420</b>
-              </b>
-            </p>
-          </div>
-          <div class="person-shiwarne">
-            <img
-              src="Images/Shiwarne2.png"
-              alt=""
-              class="person-pic-shiwarne"
-            ></img>
-          </div>
-          <div class="person-info-shiwarne">
-            <h2>
-              <b>
-                <b>Shiwarne Silva</b>
-              </b>
-            </h2>
-            <p>
-              <b>
-                <b>20210059 / w1914619</b>
-              </b>
-            </p>
-          </div>
-          <div className="text-center">
-            <Button
-              variant="gradient"
-              color="deep-purple"
-              size="md"
-              className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
-              onClick={() => navigate("/")}
-            >
-              <span>Back to home</span>
-            </Button>
-          </div>
+          <h1 className="text-center text-4xl  text-indigo-900 font-sans font-semibold">
+            Our Team
+          </h1>
         </h1>
+        <section class="bg-indigo-100 dark:bg-gray-900">
+          <div class="py-8 px-4 mx-auto max-w-screen-lg lg:py-13 lg:px-1 ">
+            <br />
+            <br />
+            <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+              <div class="items-center bg-indigo-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                  <img
+                    class=" w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
+                    src="Images/Rajani1.png"
+                    alt="Rajani"
+                  ></img>
+                </a>
+                <div class="p-5">
+                  <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Rajani Sooriyaarachchi
+                  </h3>
+                  <span class="text-gray-500 dark:text-gray-400">
+                    <b>Front-End Developer</b>
+                  </span>
+                  <p class="text-[12px] font-bold mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">
+                    20210190 / w1867050
+                  </p>
+                  <ul class="flex space-x-4 sm:mt-0">
+                    <li>
+                      <a
+                        href="https://github.com/RajaniSooriya"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://instagram.com/rajaniii_s?igshid=YmMyMTA2M2Y="
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.linkedin.com/in/rajani-sooriyaarachchi-72b304222"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://twitter.com/rajanir_s?s=09"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="items-center bg-indigo-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                  <img
+                    class=" w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
+                    src="Images/Purindu1.png"
+                    alt="Purindu"
+                  ></img>
+                </a>
+                <div class="p-5">
+                  <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Purindu Weerawardana
+                  </h3>
+                  <span class="text-gray-500 dark:text-gray-400">
+                    <b>Full Stack Developer.</b>
+                  </span>
+                  <p class="text-[12px] font-bold mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">
+                    20210379 / w1867462
+                  </p>
+                  <ul class="flex space-x-4 sm:mt-0">
+                    <li>
+                      <a
+                        href="https://github.com/PurinduWeerawardana"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://instagram.com/thamash.w?igshid=YmMyMTA2M2Y="
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.linkedin.com/in/purindu-weerawardana"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://twitter.com/PurinduW?s=09"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="items-center bg-indigo-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                  <img
+                    class=" w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
+                    src="Images/Lakshan1.png"
+                    alt="Lakshan"
+                  ></img>
+                </a>
+                <div class="p-5">
+                  <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Lakshan Costa
+                  </h3>
+                  <span class="text-gray-500 dark:text-gray-400">
+                    <b>Backend Developer in AI.</b>
+                  </span>
+                  <p class="text-[12px] font-bold mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">
+                    20210418 / w1867568
+                  </p>
+                  <ul class="flex space-x-4 sm:mt-0">
+                    <li>
+                      <a
+                        href="https://github.com/Lakshan-Costa"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://instagram.com/lakshan_costa?igshid=YmMyMTA2M2Y="
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.linkedin.com/in/lakshan-costa-231596201"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="items-center bg-indigo-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                  <img
+                    class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
+                    src="Images/Shiwarne2.png"
+                    alt="Shiwarne"
+                  ></img>
+                </a>
+                <div class="p-5">
+                  <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Shiwarne Silva
+                  </h3>
+                  <span class="text-gray-500 dark:text-gray-400">
+                    <b>Passionate Tech Enthusiast.</b>
+                  </span>
+                  <p class="text-[12px] font-bold mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">
+                    20210059 / w1914619
+                  </p>
+                  <ul class="flex space-x-4 sm:mt-0">
+                    <li>
+                      <a
+                        href="https://github.com/Shiwarne-Silva"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://instagram.com/shiwarne_silva_?igshid=MDM4ZDc5MmU="
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.linkedin.com/in/shiwarne-silva-434ab0231"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://twitter.com/DaRK_SHIWARnE?t=0yxbHBbdvrJ0RlJglnZ9Sg&s=09"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="items-center bg-indigo-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                  <img
+                    class=" w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
+                    src="Images/Jairamanan1.png"
+                    alt="Jairamanan"
+                  ></img>
+                </a>
+                <div class="p-5">
+                  <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Jaiyramanan Vijayaalayan
+                  </h3>
+                  <span class="text-gray-500 dark:text-gray-400">
+                    <b>Front-End Developer</b>
+                  </span>
+                  <p class="text-[12px] font-bold mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">
+                    20200276 / w1868420
+                  </p>
+                  <ul class="flex space-x-4 sm:mt-0">
+                    <li>
+                      <a
+                        href="https://github.com/jaiyramanan23"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://instagram.com/jaiyramanan?igshid=YmMyMTA2M2Y"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.linkedin.com/in/jaiyramanan-vijayaalayan-798412118"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://twitter.com/jaiyramanan"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div className="flex justify-center">
+          <Button
+            variant="gradient"
+            color="deep-purple"
+            size="md"
+            className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
+            onClick={() => navigate("/")}
+          >
+            <span>Back to home</span>
+          </Button>
+        </div>
       </div>
     </div>
   );

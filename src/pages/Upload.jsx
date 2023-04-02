@@ -5,11 +5,11 @@ import UploadCard from "../components/UploadCard";
 export default function Upload() {
   return (
     <div className="upload">
-      <Navbar></Navbar>
+      <Navbar />
       <div className="blob">
         <img src={blob} alt="" />
       </div>
-      <div className="content grid gap-4 grid-cols-2 w-11/12 my-44 mx-24">
+      <div className="content grid gap-4 grid-cols-1 sm:grid-cols-2 w-11/12 my-12 sm:my-44 mx-auto sm:mx-24">
         <div className="left my-auto">
           <h1 className="text-left text-4xl sm:text-4xl text-indigo-900 font-sans font-semibold">
             Upload your presentation slide deck and generate a informative script
@@ -19,8 +19,8 @@ export default function Upload() {
           </h1>
         </div>
         <div className="right">
-          <UploadCard></UploadCard>
-          </div>
+          <UploadCard />
+        </div>
       </div>
     </div>
   );

@@ -20,22 +20,19 @@ export default function Login() {
         <div className="left my-auto">
           <img src={illustration} alt="" className="w-9/12 m-auto" />
         </div>
-        <div className="right">
-          <h1 className="text-left text-4xl sm:text-4xl font-sans font-semibold mb-4">
-            Log<span className="text-textPurple"> In</span>
-          </h1>
-          <div className="flex w-10/12 flex-col gap-6">
-            <Input
-              size="lg"
-              color="indigo"
-              label="Username or E-mail address"
-            />
-            <div id="password-wrapper" className="relative">
+        <div className="content grid gap-4 grid-cols-1 sm:grid-cols-2 w-10/12 my-32 mx-auto">
+          <div className="left my-auto">
+            <img src={illustration} alt="" className="w-9/12 m-auto" />
+          </div>
+          <div className="right">
+            <h1 className="text-left text-4xl sm:text-4xl font-sans font-semibold mb-4">
+              Log<span className="text-textPurple"> In</span>
+            </h1>
+            <div className="flex flex-col gap-6">
               <Input
-                type="password"
                 size="lg"
                 color="indigo"
-                label="Password"
+                label="Username or E-mail address"
               />
               <Checkbox color="deep-purple" label="Remember Me" ripple={true} />
               <div className="absolute right-0 flex flex-row-10 justify-between">
@@ -67,7 +64,7 @@ export default function Login() {
                 color="deep-purple"
                 size="md"
                 className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
-                onClick={() => navigate("/privacypolicy")}
+                onClick={() => navigate("/termsPolicy")}
               >
                 <p>Terms</p>
               </Button>
