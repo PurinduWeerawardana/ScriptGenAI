@@ -8,8 +8,6 @@ import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndPolicy from "./pages/TermsAndPolicy";
 
-
-
 function App() {
   return (
     <Routes>
