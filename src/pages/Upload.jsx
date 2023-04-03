@@ -19,8 +19,7 @@ export default function Upload() {
       if (user) {
         console.log(user);
         setCurrentUser(user);
-      } else {
-        
+      } else {    
         navigate("/login");
       }
 
