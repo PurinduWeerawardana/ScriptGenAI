@@ -1,9 +1,14 @@
 import "../styles/Home.css";
 import Navbar from "../components/NavBar";
 import { Button } from "@material-tailwind/react";
-
 import blob from "../static/images/blob.png";
 import { useNavigate } from "react-router-dom";
+import Rajani from "../static/images/Rajani.png";
+import Purindu from "../static/images/Purindu.png";
+import Lakshan from "../static/images/Lakshan.png";
+import Shiwarne from "../static/images/Shiwarne.png";
+import Jairamanan from "../static/images/Jairamanan.png";
+
 
 export default function Home() {
     const navigate = useNavigate();
@@ -36,7 +41,7 @@ export default function Home() {
 
           <div class="items-center bg-indigo-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
               <a href="About">
-                  <img class=" w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="Images/Rajani1.png" alt="Rajani"></img>
+                  <img class=" w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={Rajani} alt="Rajani"></img>
               </a>
               <div class="p-5">
                   <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -73,7 +78,7 @@ export default function Home() {
 
           <div class="items-center bg-indigo-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
               <a href="About">
-                  <img class=" w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="Images/Purindu1.png" alt="Purindu"></img>
+                  <img class=" w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={Purindu} alt="Purindu"></img>
               </a>
               <div class="p-5">
                   <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -110,7 +115,7 @@ export default function Home() {
 
           <div class="items-center bg-indigo-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
               <a href="About">
-                  <img class=" w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="Images/Lakshan1.png" alt="Lakshan"></img>
+                  <img class=" w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={Lakshan} alt="Lakshan"></img>
               </a>
               <div class="p-5">
                   <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -146,7 +151,7 @@ export default function Home() {
           
           <div class="items-center bg-indigo-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
               <a href="About">
-                  <img class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="Images/Shiwarne2.png" alt="Shiwarne"></img>
+                  <img class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={Shiwarne} alt="Shiwarne"></img>
               </a>
               <div class="p-5">
                   <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -183,7 +188,7 @@ export default function Home() {
 
           <div class="items-center bg-indigo-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
               <a href="About">
-                  <img class=" w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="Images/Jairamanan1.png" alt="Jairamanan"></img>
+                  <img class=" w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={Jairamanan} alt="Jairamanan"></img>
               </a>
               <div class="p-5">
                   <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
