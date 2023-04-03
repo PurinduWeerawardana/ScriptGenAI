@@ -2,12 +2,14 @@ import Navbar from "../components/NavBar";
 import { Button, Input } from "@material-tailwind/react";
 import illustration from "../static/images/login-illustration.png";
 import blob from "../static/images/blob.png";
+import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import { signInWithGoogle } from "../firebase-config";
 import { signInWithFacebook } from "../firebase-config";
 
 export default function Signup() {
+  const navigate = useNavigate();
   return (
     <div className="upload">
       <Navbar></Navbar>
@@ -25,13 +27,20 @@ export default function Signup() {
           <div className="flex w-10/12 flex-col gap-6">
             <Input size="lg" color="indigo" label="Name" />
             <Input size="lg" color="indigo" label="Email Address" />
-            <Input size="lg" color="indigo" label="Password" type ="password"/>
-            <Input size="lg" color="indigo" label="Confirm Password" type ="password" />
-            <Button color="deep-purple" size="lg" block>
+            <Input size="lg" color="indigo" label="Password" type="password" />
+            <Input
+              size="lg"
+              color="indigo"
+              label="Confirm Password"
+              type="password"
+            />
+            <Button color="deep-purple" size="lg">
               Create Account
             </Button>
             <div id="social-login">
-              <p className="text-center text-sm underline">Already have an account? Log In</p>
+              <p className="text-center text-sm underline">
+                Already have an account? Log In
+              </p>
 
               <div className="flex flex-row-3 justify-around">
                 <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
@@ -46,6 +55,35 @@ export default function Signup() {
                   />
                 </div>
               </div>
+            </div>
+            <div className="flex flex-row-3 justify-between text-textPurple">
+              <Button
+                variant="gradient"
+                color="deep-purple"
+                size="md"
+                className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
+                onClick={() => navigate("/privacypolicy")}
+              >
+                <p>Terms</p>
+              </Button>
+              <Button
+                variant="gradient"
+                color="deep-purple"
+                size="md"
+                className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
+                onClick={() => navigate("/privacypolicy")}
+              >
+                <p>Privacy</p>
+              </Button>
+              <Button
+                variant="gradient"
+                color="deep-purple"
+                size="md"
+                className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
+                onClick={() => navigate("/privacypolicy")}
+              >
+                <p>Security</p>
+              </Button>
             </div>
           </div>
         </div>

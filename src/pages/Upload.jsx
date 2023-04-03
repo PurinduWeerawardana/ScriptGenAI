@@ -10,14 +10,21 @@ export default function Upload() {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
+
     getCurrentUser().then((user) => {
+
+    const checkCurrentUser = async () => {
+      const user = await getCurrentUser();
+
       if (user) {
         console.log(user);
         setCurrentUser(user);
       } else {
+        
         navigate("/login");
       }
-    });
+
+    };
   }, []);
 
   if (!currentUser) {
@@ -31,13 +38,31 @@ export default function Upload() {
   return (
     <div className="upload">
       <Navbar />
+
+
+    checkCurrentUser(().then();
+  , [navigate]);
+
+  return (
+    <div className="upload">
+      <Navbar>
+        <user className="displayName"></user>
+        displayName
+      </Navbar>
+  );
+
       <div className="blob">
         <img src={blob} alt="" />
       </div>
 
       <div className="left-up">
         <h1 className="text-center my-4 text-xl text-deep-purple-600 font-sans font-bold">
+
           Hi {currentUser.displayName}
+        </h1>
+        <h1 className="text-center my-4 text-xl text-deep-purple-600 font-sans font-bold">
+          Explore the magic of ScriptGenAI
+
         </h1>
       </div>
 
@@ -62,5 +87,7 @@ export default function Upload() {
         </div>
       </div>
     </div>
+    </div>
   );
+  });
 }

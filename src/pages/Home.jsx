@@ -33,7 +33,6 @@ export default function Home() {
             size="md"
             className="bg-indigo-900 text-white font-bold py-4 px-6 m-2 rounded-full"
             onClick={() => navigate("/Login")}
-            
           >
             <span>Get Started</span>
           </Button>

@@ -48,7 +48,7 @@ export default function NavBar() {
           }}
         />
         <div className="">
-          <Buttons isUserExist={isUserExist} setIsUserExist={setIsUserExist}/>
+          <Buttons isUserExist={isUserExist} setIsUserExist={setIsUserExist} />
         </div>
         <IconButton
           variant="text"
@@ -114,8 +114,7 @@ export default function NavBar() {
   );
 }
 
-function Buttons({ isUserExist,setIsUserExist }) {
-
+function Buttons({ isUserExist, setIsUserExist }) {
   const navigate = useNavigate();
 
   if (isUserExist) {
@@ -128,7 +127,6 @@ function Buttons({ isUserExist,setIsUserExist }) {
         onClick={() => {
           signOutUser();
           navigate("/Login");
-          
         }}
       >
         <span>Sign Out</span>
