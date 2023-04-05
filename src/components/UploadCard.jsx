@@ -5,7 +5,6 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
-// import { response } from "express";
 
 const app = initializeApp({
   apiKey: "AIzaSyAs3dSZySiNa5yCY2MSqvmCVKexMTSxQ3E",
@@ -20,8 +19,6 @@ const app = initializeApp({
 const storage = getStorage(app);
 
 function App() {
-
-
   const navigate = useNavigate();
   // State to store uploaded file
   const [file, setFile] = useState("");

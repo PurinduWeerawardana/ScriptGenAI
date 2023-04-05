@@ -48,7 +48,8 @@ export default function Home() {
           <b>
             <li>
               Our services are designed to assist you in generating natural
-              language summaries for your charts and presentations. You agree to use our services only for lawful purposes and in accordance with
+              language summaries for your charts and presentations. You agree to
+              use our services only for lawful purposes and in accordance with
               these Terms and Policies.
             </li>
           </b>
@@ -63,7 +64,8 @@ export default function Home() {
               The content on our website, including but not limited to text,
               graphics, images, and software, is the property of ScriptGenAI and
               is protected by intellectual property laws. You are granted a
-              limited license to use our services for personal or non-commercial use only.
+              limited license to use our services for personal or non-commercial
+              use only.
             </li>
           </b>
         </p>
