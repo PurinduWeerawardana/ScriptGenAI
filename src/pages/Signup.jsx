@@ -3,9 +3,7 @@ import { Button, Input } from "@material-tailwind/react";
 import illustration from "../static/images/login-illustration.png";
 import blob from "../static/images/blob.png";
 import { useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
-import { signInWithGoogle } from "../firebase-config";
 import { signInWithFacebook } from "../firebase-config";
 import { GoogleLogin } from "@react-oauth/google";
 
