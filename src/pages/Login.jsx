@@ -7,10 +7,13 @@ import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import { signInWithFacebook } from "../firebase-config";
 
+import FacebookLogin from 'react-facebook-login';
 import { GoogleLogin } from "@react-oauth/google";
 
 
 export default function Login() {
+
+  const FACEBOOK_APP_ID = "1163696608359561";
 
   const responseMessage = (response) => {
     console.log(response);
@@ -19,6 +22,24 @@ export default function Login() {
   const errorMessage = (error) => {
     console.log(error);
   };
+
+  const responseFacebook = (responsefb) => {
+
+    if(responsefb.accessToken) {
+      console.log(responsefb);
+      navigate('/Upload');
+    }
+  }
+
+  const errorFacebook = (errorFacebookmsg) => {
+    console.log(errorFacebookmsg);
+
+  }
+
+  const success = (success) => {
+    console.log(success);
+    navigate('/upload');
+  }
 
   const navigate = useNavigate();
   return (
@@ -62,15 +83,9 @@ export default function Login() {
               <div className="flex flex-row-3 justify-around">
                 
 
-              <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+              <GoogleLogin onSuccess={responseMessage} onError={errorMessage}/>
+              <FacebookLogin appId={FACEBOOK_APP_ID} autoLoad={false} callback={responseFacebook} size="small" on onError={errorFacebook} onSuccess = {success}/>
 
-                <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
-                  <BsFacebook
-                    onClick={signInWithFacebook}
-                    size={30}
-                    color={"blue"}
-                  />
-                </div>
               </div>
             </div>
             <div className="flex flex-row-3 justify-between text-textPurple">
