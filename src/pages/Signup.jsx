@@ -57,8 +57,7 @@ export default function Signup() {
               Sign Up
             </Button>
             <div id="social-login">
-              <p className="text-center text-sm">Already have an account?</p>
-              <p className="text-right text-textPurple">Log in</p>
+              <p className="text-center text-sm underline">Already have an account? Log In</p><br/>
 
               <div className="flex flex-row-3 justify-around">
                 <GoogleLogin

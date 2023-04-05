@@ -70,8 +70,7 @@ export default function Login() {
               Log in
             </Button>
             <div id="social-login">
-              <p className="text-center text-sm">Need an account?</p>
-              <p className="text-right text-textPurple">Sign up</p>
+              <p className="text-center text-sm">Need an account? Sign Up</p>
               <div className="flex flex-row-3 justify-around">
                 <GoogleLogin
                   onSuccess={responseMessage}

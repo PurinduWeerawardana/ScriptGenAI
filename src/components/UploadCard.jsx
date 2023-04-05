@@ -7,26 +7,16 @@ import { getStorage } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 
 const app = initializeApp({
-  apiKey: "AIzaSyAs3dSZySiNa5yCY2MSqvmCVKexMTSxQ3E",
-  authDomain: "sdgp-squadr.firebaseapp.com",
-  projectId: "sdgp-squadr",
-  storageBucket: "sdgp-squadr.appspot.com",
-  messagingSenderId: "411601539731",
-  appId: "1:411601539731:web:8f9e7ca228e25575663366",
-  measurementId: "G-N48LSP4X4J",
+  // Firebase app configuration
 });
 
 const storage = getStorage(app);
 
 function App() {
   const navigate = useNavigate();
-  // State to store uploaded file
   const [file, setFile] = useState("");
-
-  // progress
   const [percent, setPercent] = useState(0);
 
-  // Handle file upload event and update state
   function handleChange(event) {
     const selectedFile = event.target.files[0];
     if (
@@ -47,8 +37,6 @@ function App() {
 
     const storageRef = ref(storage, `/files/${file.name}`);
 
-    // progress can be paused and resumed. It also exposes progress updates.
-    // Receives the storage reference and the file to upload.
     const uploadTask = uploadBytesResumable(storageRef, file);
 
     uploadTask.on(
@@ -58,12 +46,10 @@ function App() {
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         );
 
-        // update progress
         setPercent(percent);
       },
       (err) => console.log(err),
       () => {
-        // download url
         getDownloadURL(uploadTask.snapshot.ref).then((url) => {
           console.log(url);
           console.log(file.name);
@@ -75,8 +61,8 @@ function App() {
 
   return (
     <div>
-      <Card className="w-9/12 h-96 m-auto">
-        <Card className="bg-lightPurple m-6 h-full">
+      <Card className="w-full sm:w-9/12 md:w-8/12 lg:w-7/12 xl:w-6/12 h-auto m-auto">
+        <Card className="bg-lightPurple m-6 p-4 h-full">
           <p>{percent} % </p>
 
           <Progress
@@ -128,6 +114,8 @@ function App() {
             className="mb-6 mx-10 rounded-full"
           >
             <span>Upload</span>
+         
+
           </Button>
         </Card>
       </Card>
