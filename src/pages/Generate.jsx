@@ -25,7 +25,7 @@ export default function Generate() {
       headers: { link: link },
     };
     var response = await fetch(
-      "https://demo1510303.mockable.io/scirpt",
+      "/scripts",
       requestOptions
     );
     if (!response.ok) {
