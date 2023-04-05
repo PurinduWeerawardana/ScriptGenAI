@@ -26,6 +26,9 @@ function App() {
   // progress
   const [percent, setPercent] = useState(0);
 
+  // uploading state
+  const [isUploading, setIsUploading] = useState(false);
+
   // Handle file upload event and update state
   function handleChange(event) {
     const selectedFile = event.target.files[0];
@@ -44,6 +47,8 @@ function App() {
     if (!file) {
       alert("Please upload the Presentation Slides!");
     }
+
+    setIsUploading(true); // Set isUploading to true when the upload starts
 
     const storageRef = ref(storage, `/files/${file.name}`);
 
@@ -68,6 +73,7 @@ function App() {
           console.log(url);
           console.log(file.name);
           navigate("/generate", { state: { link: url, fileName: file.name } });
+          setIsUploading(false); // Set isUploading to false when the upload is complete
         });
       }
     );
@@ -110,7 +116,6 @@ function App() {
               style={{
                 backgroundColor: "#F3F4F6",
                 color: "#6B7280",
-
                 padding: "15px 70px",
                 boxShadow: "none",
                 border: "none",
@@ -126,6 +131,7 @@ function App() {
             color="deep-purple"
             size="md"
             className="mb-6 mx-10 rounded-full"
+            disabled={isUploading} // Disable the button if isUploading is true
           >
             <span>Upload</span>
           </Button>
