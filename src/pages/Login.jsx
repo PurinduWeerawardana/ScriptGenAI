@@ -5,10 +5,21 @@ import blob from "../static/images/blob.png";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
-import { signInWithGoogle } from "../firebase-config";
 import { signInWithFacebook } from "../firebase-config";
 
+import { GoogleLogin } from "@react-oauth/google";
+
+
 export default function Login() {
+
+  const responseMessage = (response) => {
+    console.log(response);
+    navigate("/Upload");
+  };
+  const errorMessage = (error) => {
+    console.log(error);
+  };
+
   const navigate = useNavigate();
   return (
     <div className="upload">
@@ -49,9 +60,10 @@ export default function Login() {
               <p className="text-center text-sm">Need an account?</p>
               <p className="text-right text-textPurple">Sign up</p>
               <div className="flex flex-row-3 justify-around">
-                <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
-                  <FcGoogle onClick={signInWithGoogle} size={30} />
-                </div>
+                
+
+              <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+
                 <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
                   <BsFacebook
                     onClick={signInWithFacebook}

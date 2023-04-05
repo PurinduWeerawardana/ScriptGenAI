@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, Button, Progress, input } from "@material-tailwind/react";
 import uploadIcon from "../static/images/upload-icon.png";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
+import { googleLogout, useGoogleLogin } from '@react-oauth/google';
+import axios from 'axios';
 // import { response } from "express";
 
 const app = initializeApp({
@@ -20,6 +22,41 @@ const app = initializeApp({
 const storage = getStorage(app);
 
 function App() {
+
+  //google login
+  const [ user, setUser ] = useState([]);
+    const [ profile, setProfile ] = useState([]);
+
+    const login = useGoogleLogin({
+        onSuccess: (codeResponse) => setUser(codeResponse),
+        onError: (error) => console.log('Login Failed:', error)
+    });
+
+    useEffect(
+      () => {
+          if (user) {
+              axios
+                  .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
+                      headers: {
+                          Authorization: `Bearer ${user.access_token}`,
+                          Accept: 'application/json'
+                      }
+                  })
+                  .then((res) => {
+                      setProfile(res.data);
+                  })
+                  .catch((err) => console.log(err));
+          }
+      },
+      [ user ]
+  );
+
+   // log out function to log the user out of google and set the profile array to null
+   const logOut = () => {
+    googleLogout();
+    setProfile(null);
+    };
+
   const navigate = useNavigate();
   // State to store uploaded file
   const [file, setFile] = useState("");
