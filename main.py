@@ -10,7 +10,7 @@ import ppextractmodule
 
 
 # set API key
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 def generateScripts(slides):
@@ -56,30 +56,6 @@ def generateSingleScript(slides):
     generatedScripts = completion.choices[0].text
     return generatedScripts
 
-@app.route('/predict', methods=['GET'])
-def predict():
-
-    generatedScriptGraph = []
-    graphInfo = ReadGraphOCR.readGraph('VBC71.jpg') #Add the file from the presentation file
-    print(graphInfo)
-
-    promptForGPT = "Write a 150 word Description about the following graph. use the following coordinated to get a better understanding->\\n" + \
-    re.sub('S\d:', '', graphInfo)
-   
-        # call openai for completion
-    completion = openai.Completion.create(
-            engine="text-davinci-003",
-            prompt=promptForGPT,
-            temperature=0.7,
-            top_p=1,
-            frequency_penalty=0,
-        presence_penalty=0,
-        max_tokens=200)
-        # append to generated scripts list
-    generatedScriptGraph.append(completion.choices[0].text)
-    print(generatedScriptGraph)
-    return generatedScriptGraph
-
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/scripts": {"origins": "*"}})
@@ -91,7 +67,7 @@ def hello_world():
 
 
 def extractAndGenerate():
-    output = ppextractmodule.process("presentation.pptx")
+    output = str(ppextractmodule.process("presentation.pptx")["text"])
     generated = generateSingleScript(output)
     return generated
 
@@ -103,3 +79,10 @@ def scripts():
     script = extractAndGenerate()
     data = {'script': script}
     return jsonify(data)
+
+
+@app.route('/check', methods=['GET'])
+def check():
+    URL = 'https://firebasestorage.googleapis.com/v0/b/sdgp-squadr.appspot.com/o/files%2Fscg.pptx?alt=media&token=40d1e1ed-7eb7-4b53-b7f1-a6b80876235d'
+    response = request.urlretrieve(URL, "presentation.pptx")
+    return str(ppextractmodule.process("presentation.pptx")["images"])
