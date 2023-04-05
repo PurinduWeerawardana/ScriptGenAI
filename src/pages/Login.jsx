@@ -102,7 +102,7 @@ export default function Login() {
                 color="deep-purple"
                 size="md"
                 className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
-                onClick={() => navigate("/privacypolicy")}
+                onClick={() => navigate("/termsPolicy")}
               >
                 <p>Terms</p>
               </Button>
@@ -120,7 +120,7 @@ export default function Login() {
                 color="deep-purple"
                 size="md"
                 className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
-                onClick={() => navigate("/privacypolicy")}
+                onClick={() => navigate("/termsPolicy")}
               >
                 <p>Security</p>
               </Button>
