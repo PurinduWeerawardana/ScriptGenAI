@@ -3,13 +3,12 @@ import { Button, Input } from "@material-tailwind/react";
 import illustration from "../static/images/login-illustration.png";
 import blob from "../static/images/blob.png";
 import { useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
-import { BsFacebook } from "react-icons/bs";
-import { signInWithGoogle } from "../firebase-config";
-import { signInWithFacebook } from "../firebase-config";
 import { GoogleLogin } from "@react-oauth/google";
+import FacebookLogin from '@greatsumini/react-facebook-login';
 
 export default function Signup() {
+
+  const FACEBOOK_APP_ID = "1163696608359561";
 
   const responseMessage = (response) => {
     console.log(response);
@@ -18,6 +17,25 @@ export default function Signup() {
   const errorMessage = (error) => {
     console.log(error);
   };
+
+  const responseFacebook = (responsefb) => {
+
+    if(responsefb.accessToken) {
+      console.log(responsefb);
+      navigate('/Upload');
+    }
+  }
+
+  const errorFacebook = (errorFacebookmsg) => {
+    console.log(errorFacebookmsg);
+
+  }
+
+  const success = (success) => {
+    console.log(success);
+    navigate('/upload');
+  }
+  
   
   const navigate = useNavigate();
   return (
@@ -47,15 +65,16 @@ export default function Signup() {
               <p className="text-right text-textPurple">Log in</p>
 
               <div className="flex flex-row-3 justify-around">
-                <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+              <GoogleLogin onSuccess={responseMessage} onError={errorMessage}/>
+              <FacebookLogin appId={FACEBOOK_APP_ID} autoLoad={false} callback={responseFacebook} size="small" on onError={errorFacebook} onSuccess = {success} style={{
+    backgroundColor: '#4267b2',
+    color: '#fff',
+    fontSize: '16px',
+    padding: '12px 24px',
+    border: 'none',
+    borderRadius: '4px',
+  }}/>
 
-                <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
-                  <BsFacebook
-                    onClick={signInWithFacebook}
-                    size={30}
-                    color={"blue"}
-                  />
-                </div>
               </div>
             </div>
             <div className="flex flex-row-3 justify-between text-textPurple">
