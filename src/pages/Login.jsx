@@ -3,12 +3,11 @@ import { Button, Input, Checkbox } from "@material-tailwind/react";
 import illustration from "../static/images/login-illustration.png";
 import blob from "../static/images/blob.png";
 import { useNavigate } from "react-router-dom";
-import { BsFacebook } from "react-icons/bs";
-import { signInWithFacebook } from "../firebase-config";
+import FacebookLogin from "@greatsumini/react-facebook-login";
 import { GoogleLogin } from "@react-oauth/google";
 
-
 export default function Login() {
+  const FACEBOOK_APP_ID = "1163696608359561";
 
   const responseMessage = (response) => {
     console.log(response);
@@ -16,6 +15,22 @@ export default function Login() {
   };
   const errorMessage = (error) => {
     console.log(error);
+  };
+
+  const responseFacebook = (responsefb) => {
+    if (responsefb.accessToken) {
+      console.log(responsefb);
+      navigate("/Upload");
+    }
+  };
+
+  const errorFacebook = (errorFacebookmsg) => {
+    console.log(errorFacebookmsg);
+  };
+
+  const success = (success) => {
+    console.log(success);
+    navigate("/upload");
   };
 
   const navigate = useNavigate();
@@ -58,17 +73,27 @@ export default function Login() {
               <p className="text-center text-sm">Need an account?</p>
               <p className="text-right text-textPurple">Sign up</p>
               <div className="flex flex-row-3 justify-around">
-                
-
-              <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
-
-                <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
-                  <BsFacebook
-                    onClick={signInWithFacebook}
-                    size={30}
-                    color={"blue"}
-                  />
-                </div>
+                <GoogleLogin
+                  onSuccess={responseMessage}
+                  onError={errorMessage}
+                />
+                <FacebookLogin
+                  appId={FACEBOOK_APP_ID}
+                  autoLoad={false}
+                  callback={responseFacebook}
+                  size="small"
+                  on
+                  onError={errorFacebook}
+                  onSuccess={success}
+                  style={{
+                    backgroundColor: "#4267b2",
+                    color: "#fff",
+                    fontSize: "16px",
+                    padding: "12px 24px",
+                    border: "none",
+                    borderRadius: "4px",
+                  }}
+                />
               </div>
             </div>
             <div className="flex flex-row-3 justify-between text-textPurple">
@@ -77,7 +102,7 @@ export default function Login() {
                 color="deep-purple"
                 size="md"
                 className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
-                onClick={() => navigate("/privacypolicy")}
+                onClick={() => navigate("/termsPolicy")}
               >
                 <p>Terms</p>
               </Button>
@@ -95,7 +120,7 @@ export default function Login() {
                 color="deep-purple"
                 size="md"
                 className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
-                onClick={() => navigate("/privacypolicy")}
+                onClick={() => navigate("/termsPolicy")}
               >
                 <p>Security</p>
               </Button>

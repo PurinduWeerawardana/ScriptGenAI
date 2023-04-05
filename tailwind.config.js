@@ -7,7 +7,7 @@ module.exports = withMT({
     extend: {
       colors: {
         lightPurple: "#F4F3FF",
-        textPurple: "#776BFF"
+        textPurple: "#776BFF",
       },
     },
   },
