@@ -95,29 +95,27 @@ function App() {
             onClick={input}
           />
           <div className="text-center">
-            <label
-              htmlFor="pptx-file"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Please select a PPTX file:
-            </label>
-
-            <input
-              type="file"
-              id="pptx-file"
-              className="mb-8 mx-8"
-              onChange={handleChange}
-              accept=".pptx"
-              style={{
-                backgroundColor: "#F3F4F6",
-                color: "#6B7280",
-                padding: "5px 1px",
-                boxShadow: "none",
-                border: "none",
-                outline: "none",
-                cursor: "pointer",
-              }}
-            />
+          <label htmlFor="pptx-file" className="block text-gray-700 font-bold mb-2">
+            Please select a PPTX file:
+          </label>
+        
+              <input
+                type="file"
+                id="pptx-file"
+                className="mb-8 mx-8"
+                onChange={handleChange}
+                accept=".pptx"
+                style={{
+                  backgroundColor: "#F3F4F6",
+                  color: "#6B7280",
+                
+                  padding: "5px 1px",
+                  boxShadow: "none",
+                  border: "none",
+                  outline: "none",
+                  cursor: "pointer",
+                }}
+              />
           </div>
 
           <Button

@@ -101,6 +101,9 @@ export default function NavBar() {
             fullWidth
             className="mb-2"
             color="deep-purple"
+            onClick={() => {
+              navigate("/Login");
+            }}
           >
             <span>Log In</span>
           </Button>
@@ -110,6 +113,9 @@ export default function NavBar() {
             fullWidth
             className="mb-2"
             color="deep-purple"
+            onClick={() => {
+              navigate("/Signup");
+            }}
           >
             <span>Sign up</span>
           </Button>

@@ -1,4 +1,4 @@
-import "../styles/about.css";
+import "../styles/Home.css";
 import Navbar from "../components/NavBar";
 import { Button } from "@material-tailwind/react";
 import blob from "../static/images/blob.png";
@@ -13,6 +13,7 @@ export default function Home() {
       <div className="blob">
         <img src={blob} alt="" />
       </div>
+
       <div className="header grid gap-3 grid-rows-60 w-4/6 sm:w-2/3 my-10 m-auto">
         <h1 className="text-center text-4xl sm:text-6xl text-indigo-900 font-sans font-semibold">
           Privacy Policy
