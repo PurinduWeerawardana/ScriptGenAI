@@ -3,12 +3,8 @@ import { Button, Input } from "@material-tailwind/react";
 import illustration from "../static/images/login-illustration.png";
 import blob from "../static/images/blob.png";
 import { useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
-import { BsFacebook } from "react-icons/bs";
-import { signInWithGoogle } from "../firebase-config";
-import { signInWithFacebook } from "../firebase-config";
 import { GoogleLogin } from "@react-oauth/google";
-import FacebookLogin from 'react-facebook-login';
+import FacebookLogin from '@greatsumini/react-facebook-login';
 
 export default function Signup() {
 
@@ -70,7 +66,14 @@ export default function Signup() {
 
               <div className="flex flex-row-3 justify-around">
               <GoogleLogin onSuccess={responseMessage} onError={errorMessage}/>
-              <FacebookLogin appId={FACEBOOK_APP_ID} autoLoad={false} callback={responseFacebook} size="small" on onError={errorFacebook} onSuccess = {success}/>
+              <FacebookLogin appId={FACEBOOK_APP_ID} autoLoad={false} callback={responseFacebook} size="small" on onError={errorFacebook} onSuccess = {success} style={{
+    backgroundColor: '#4267b2',
+    color: '#fff',
+    fontSize: '16px',
+    padding: '12px 24px',
+    border: 'none',
+    borderRadius: '4px',
+  }}/>
 
               </div>
             </div>
