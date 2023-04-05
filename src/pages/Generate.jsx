@@ -7,7 +7,8 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function Generate() {
-  const [generatedScript, setGeneratedScript] = useState("");
+  const [generatedScript, setGeneratedScript] = useState();
+  const [OCRscript, setOCRscript] = useState("No  scripts generated!");
   const { state } = useLocation();
   const link = state.link;
   const fileName = state.fileName.replace(".pptx", "");
@@ -16,24 +17,39 @@ export default function Generate() {
     setGeneratedScript(
       <TextLoader lines={10} width={"100%"} height="10" lineHeight="h-2" />
     );
+    setOCRscript(
+      <TextLoader lines={5} width={"100%"} height="10" lineHeight="h-2" />
+    );
     const requestOptions = {
       method: "GET",
       headers: { link: link },
     };
     var response = await fetch(
-      "https://scriptgenai.pythonanywhere.com/scripts",
+      "https://demo1510303.mockable.io/scirpt",
       requestOptions
     );
     if (!response.ok) {
       setGeneratedScript("Failed to generate script!");
+      setOCRscript("Failed to generate script!");
+    } else {
+      var generatedContent = await response.json();
+      var charts = generatedContent.charts;
+      var chartImages = Object.keys(charts);
+      var chartText = "";
+      var text = generatedContent.script;
+
+      for (var i = 0; i < chartImages.length; i++) {
+        chartText +=
+          "Chart " + (i + 1) + ":\t" + charts[chartImages[i]] + "<br>";
+      }
+      setGeneratedScript(text);
+      setOCRscript(chartText ? chartText : "No charts found!");
     }
-    var script = await response.json();
-    setGeneratedScript(script.script);
   };
 
   var downloadTxtFile = () => {
     const element = document.createElement("a");
-    const file = new Blob([generatedScript], {
+    const file = new Blob([generatedScript, OCRscript], {
       type: "text/plain",
     });
     element.href = URL.createObjectURL(file);
@@ -58,9 +74,18 @@ export default function Generate() {
             <PresentationViewer url={link} />
           </div>
         </div>
-        <div className="script text-center mx-auto bg-red w-10/12">
-          <p id="script" className="generated-content">
+        <div className="text-center script mx-auto bg-red w-10/12">
+          <h1 className="text-center text-4xl sm:text-2xl font-sans font-semibold my-2">
+            Text Script
+          </h1>
+          <p id="script" className="generated-content text-center">
             {generatedScript}
+          </p>
+          <h1 className="text-center text-4xl sm:text-2xl font-sans font-semibold my-2">
+            Chart Script
+          </h1>
+          <p id="OCRscript" className="generated-content">
+            {OCRscript}
           </p>
           <div className="buttons flex justify-center my-4">
             <Button

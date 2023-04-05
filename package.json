@@ -2,6 +2,7 @@
   "name": "scriptgenai",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@material-tailwind/react": "^1.2.5",
     "@pdftron/webviewer": "^8.12.0",
