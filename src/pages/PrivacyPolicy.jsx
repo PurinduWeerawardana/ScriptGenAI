@@ -1,4 +1,4 @@
-import "../styles/about.css";
+import "../styles/root.css";
 import Navbar from "../components/NavBar";
 import { Button } from "@material-tailwind/react";
 import blob from "../static/images/blob.png";
@@ -30,7 +30,7 @@ export default function Home() {
             Privacy Policy.
           </b>
         </p>
-        <div className="privacy-container overflow-y-auto border-2 border-indigo-800 h-96">
+        <div className="privacy-container overflow-y-auto border-2 border-indigo-200">
           <h2 className="text-lg text-indigo-900 my-6 mx-2">
             <b>Information We Collect</b>
           </h2>
@@ -119,65 +119,61 @@ export default function Home() {
           <p className="text-justify text-lg text-gray-700 my-6 mx-2">
             <b>
               If you have any questions about this Privacy Policy or our
-              practices, please contact us; <br />
+              practices, please{" "}
+              <a href="about">
+                <font color="#00008B">
+                  <u>contact us;</u>
+                </font>
+              </a>
+              <br />
               Rajani Soriyaarachchi -{" "}
-              <font color="indigo">
+              <font color="indigo" size="3">
                 <u>
-                  <a href="rajani.20210190@iit.ac.lk">
-                    rajani.20210190@iit.ac.lk
-                  </a>
+                  <a href="about">rajani.20210190@iit.ac.lk</a>
                 </u>
               </font>
               <br />
               Lakshan Costa -{" "}
-              <font color="indigo">
+              <font color="indigo" size="3">
                 <u>
-                  <a href="dinujaya.20210418@iit.ac.lk">
-                    dinujaya.20210418@iit.ac.lk
-                  </a>
+                  <a href="about">dinujaya.20210418@iit.ac.lk</a>
                 </u>
               </font>
               <br />
               Purimdu Weerawardana -{" "}
-              <font color="indigo">
+              <font color="indigo" size="3">
                 <u>
-                  <a href="Purindu.20210379@iit.ac.lk">
-                    Purindu.20210379@iit.ac.lk
-                  </a>
+                  <a href="about">Purindu.20210379@iit.ac.lk</a>
                 </u>
               </font>
               <br />
               Jaiyramanan Vijayaalayan -{" "}
-              <font color="indigo">
+              <font color="indigo" size="3">
                 <u>
-                  <a href="vijayaalayan.20200276@iit.ac.lk">
-                    vijayaalayan.20200276@iit.ac.lk
-                  </a>
+                  <a href="about">vijayaalayan.20200276@iit.ac.lk</a>
                 </u>
               </font>
               <br />
               Shiwarne Silva -{" "}
-              <font color="indigo">
+              <font color="indigo" size="3">
                 <u>
-                  <a href="shiwarne.20210059@iit.ac.lk">
-                    shiwarne.20210059@iit.ac.lk
-                  </a>
+                  <a href="about">shiwarne.20210059@iit.ac.lk</a>
                 </u>
               </font>
             </b>
           </p>
         </div>
-      </div>
-      <div className="text-center">
-        <Button
-          variant="gradient"
-          color="deep-purple"
-          size="md"
-          className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
-          onClick={() => navigate("/")}
-        >
-          <span>Back to home</span>
-        </Button>
+        <div className="text-center">
+          <Button
+            variant="gradient"
+            color="deep-purple"
+            size="md"
+            className="bg-indigo-900 text-white font-bold py-4 px-6 m-0 rounded-full"
+            onClick={() => navigate("/")}
+          >
+            <span>Back to home</span>
+          </Button>
+        </div>
       </div>
     </div>
   );

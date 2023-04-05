@@ -3,13 +3,10 @@ import { Button, Input, Checkbox } from "@material-tailwind/react";
 import illustration from "../static/images/login-illustration.png";
 import blob from "../static/images/blob.png";
 import { useNavigate } from "react-router-dom";
-
-import FacebookLogin from '@greatsumini/react-facebook-login';
+import FacebookLogin from "@greatsumini/react-facebook-login";
 import { GoogleLogin } from "@react-oauth/google";
 
-
 export default function Login() {
-
   const FACEBOOK_APP_ID = "1163696608359561";
 
   const responseMessage = (response) => {
@@ -21,22 +18,20 @@ export default function Login() {
   };
 
   const responseFacebook = (responsefb) => {
-
-    if(responsefb.accessToken) {
+    if (responsefb.accessToken) {
       console.log(responsefb);
-      navigate('/Upload');
+      navigate("/Upload");
     }
-  }
+  };
 
   const errorFacebook = (errorFacebookmsg) => {
     console.log(errorFacebookmsg);
-
-  }
+  };
 
   const success = (success) => {
     console.log(success);
-    navigate('/upload');
-  }
+    navigate("/upload");
+  };
 
   const navigate = useNavigate();
   return (
@@ -78,18 +73,27 @@ export default function Login() {
               <p className="text-center text-sm">Need an account?</p>
               <p className="text-right text-textPurple">Sign up</p>
               <div className="flex flex-row-3 justify-around">
-                
-
-              <GoogleLogin onSuccess={responseMessage} onError={errorMessage}/>
-              <FacebookLogin appId={FACEBOOK_APP_ID} autoLoad={false} callback={responseFacebook} size="small" on onError={errorFacebook} onSuccess = {success} style={{
-    backgroundColor: '#4267b2',
-    color: '#fff',
-    fontSize: '16px',
-    padding: '12px 24px',
-    border: 'none',
-    borderRadius: '4px',
-  }}/>
-
+                <GoogleLogin
+                  onSuccess={responseMessage}
+                  onError={errorMessage}
+                />
+                <FacebookLogin
+                  appId={FACEBOOK_APP_ID}
+                  autoLoad={false}
+                  callback={responseFacebook}
+                  size="small"
+                  on
+                  onError={errorFacebook}
+                  onSuccess={success}
+                  style={{
+                    backgroundColor: "#4267b2",
+                    color: "#fff",
+                    fontSize: "16px",
+                    padding: "12px 24px",
+                    border: "none",
+                    borderRadius: "4px",
+                  }}
+                />
               </div>
             </div>
             <div className="flex flex-row-3 justify-between text-textPurple">
