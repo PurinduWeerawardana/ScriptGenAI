@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { logo } from "../static/images/logo.png";
 import {
   Navbar,
   MobileNav,
   Button,
   IconButton,
 } from "@material-tailwind/react";
-import logo from "../static/images/logo.png";
 
 export default function NavBar() {
   const [openNav, setOpenNav] = useState(false);
