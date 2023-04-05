@@ -6,8 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import { signInWithFacebook } from "../firebase-config";
-
+import React,{useState} from 'react';
 import { GoogleLogin } from "@react-oauth/google";
+import {useHistory} from "react-router-dom";
 
 
 export default function Login() {
@@ -19,6 +20,9 @@ export default function Login() {
   const errorMessage = (error) => {
     console.log(error);
   };
+
+  const history=useHistory();
+  const [credentials,setCredentials]=useState ({email:"",password:""});
 
   const navigate = useNavigate();
   return (
@@ -40,25 +44,34 @@ export default function Login() {
               size="lg"
               color="indigo"
               label="Username or E-mail address"
+              value={credentials.email}
+              type="text"
+              placeholder="Enter your email-address"
+              onChange={event=>setCredentials({email:event.target.value,password:credentials.password})}
             />
             <div id="password-wrapper" className="relative">
               <Input
+                value={credentials.password}
                 type="password"
                 size="lg"
                 color="indigo"
                 label="Password"
+                placeholder={event=> setCredentials({email: credentials.email, password: event.target.value})}
               />
               <Checkbox color="deep-purple" label="Remember Me" ripple={true} />
               <div className="absolute right-0 flex flex-row-10 justify-between">
-                <p className="text-sm text-textPurple">Forgot Password?</p>
+                <p className="text-sm text-textPurple underline">Forgot Password?Sign Up</p>
               </div>
             </div>
-            <Button color="deep-purple" size="lg">
+            <Button color="deep-purple" size="lg" disabled={ !(/^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,})$/.test(credentials.email)) }
+            onClick={()=>{
+              if (credentials.password === "let-me-in")
+                history.push("/secret");
+            }}>
               Log in
             </Button>
             <div id="social-login">
-              <p className="text-center text-sm">Need an account?</p>
-              <p className="text-right text-textPurple">Sign up</p>
+              <p className="text-center text-sm">Need an account?Sign Up</p>
               <div className="flex flex-row-3 justify-around">
                 
 
