@@ -43,7 +43,7 @@ export default function Generate() {
           "Chart " + (i + 1) + ":\t" + charts[chartImages[i]] + "<br>";
       }
       setGeneratedScript(text);
-      setOCRscript(chartText ? chartText : "No charts found!");
+      setOCRscript(chartText ? <div dangerouslySetInnerHTML={{__html: chartText}} /> : "No charts found!");
     }
   };
 
