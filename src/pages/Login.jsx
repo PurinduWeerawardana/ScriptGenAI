@@ -3,24 +3,23 @@ import { Button, Input, Checkbox } from "@material-tailwind/react";
 import illustration from "../static/images/login-illustration.png";
 import blob from "../static/images/blob.png";
 import { useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
-import { signInWithGoogle } from "../firebase-config";
 import { signInWithFacebook } from "../firebase-config";
 
-export default function Login() {
-  const navigate = useNavigate();
+import { GoogleLogin } from "@react-oauth/google";
 
-  const handleLogIn = async () => {
-    try {
-      const user = await signInWithGoogle();
-      console.log(user);
-      navigate("/upload");
-    } catch (error) {
-      console.error(error);
-    }
+
+export default function Login() {
+
+  const responseMessage = (response) => {
+    console.log(response);
+    navigate("/Upload");
+  };
+  const errorMessage = (error) => {
+    console.log(error);
   };
 
+  const navigate = useNavigate();
   return (
     <div className="upload">
       <Navbar></Navbar>
@@ -33,11 +32,14 @@ export default function Login() {
         </div>
         <div className="right">
           <h1 className="text-left text-4xl sm:text-4xl font-sans font-semibold mb-4">
-            <span className="text-textPurple"> Log In </span>
-            
+            Log<span className="text-textPurple"> In</span>
           </h1>
           <div className="flex w-10/12 flex-col gap-6">
-            <Input size="lg" color="indigo" label="E-mail address" />
+            <Input
+              size="lg"
+              color="indigo"
+              label="Username or E-mail address"
+            />
             <div id="password-wrapper" className="relative">
               <Input
                 type="password"
@@ -45,25 +47,21 @@ export default function Login() {
                 color="indigo"
                 label="Password"
               />
-              <Checkbox
-                color="deep-purple"
-                label="Remember Me"
-                ripple={true}
-              />
-              
+              <Checkbox color="deep-purple" label="Remember Me" ripple={true} />
+              <div className="absolute right-0 flex flex-row-10 justify-between">
+                <p className="text-sm text-textPurple underline">Forgot Password?Sign up</p>
+              </div>
             </div>
             <Button color="deep-purple" size="lg">
-              Log In
+              Log in
             </Button>
             <div id="social-login">
-              <p className="text-center text-sm underline">
-              Don't have an account? Sign Up
-              </p>
-
+              <p className="text-center text-sm">Need an account?Sign Up</p>
               <div className="flex flex-row-3 justify-around">
-                <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
-                  <FcGoogle onClick={handleLogIn} size={30} />
-                </div>
+                
+
+              <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+
                 <div className="bg-[#EDEDED] w-[77px] h-[72px] flex justify-center items-center rounded-[30px] hover:bg-white hover:border hover:border-indigo-300">
                   <BsFacebook
                     onClick={signInWithFacebook}
